@@ -3,18 +3,30 @@ project:
   output-dir: docs
 
 website:
-  title: "myblog"
+  title: "Yair Mau"
+  search: false
+  favicon: archive/site_images/favicon.ico
   navbar:
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+    logo: archive/site_images/site-logo-light.png
+    pinned: false
+    collapse: true
+    search: false
 format:
   html:
-    theme: cosmo
+    theme:
+      light: [flatly, custom.scss, custom-light.scss]
+      dark: [darkly, custom.scss, custom-dark.scss]
     css: styles.css
+    highlight: false
+    # https://quarto.org/docs/output-formats/html-code.html#highlighting
+    highlight-style: gruvbox
+    mainfont: Ubuntu
+    monofont: Ubuntu Mono
+    max-width: "700"
+    include-in-header:
+      - includes.html
+    
+
 
 
 

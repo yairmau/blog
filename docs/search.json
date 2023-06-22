@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "myblog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJun 19, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "The can problem\n\n\n\n\n\n\n\nquestion\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2021\n\n\nYair Mau\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -26,5 +26,40 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "posts/2021-10-27-can-problem/index.html",
+    "href": "posts/2021-10-27-can-problem/index.html",
+    "title": "The can problem",
+    "section": "",
+    "text": "hello can"
+  },
+  {
+    "objectID": "posts/2021-10-27-can-problem/index.html#watch-this-space",
+    "href": "posts/2021-10-27-can-problem/index.html#watch-this-space",
+    "title": "The can problem",
+    "section": "watch this space",
+    "text": "watch this space"
+  },
+  {
+    "objectID": "archive/posts_to_process/2021-10-28-first-post.html",
+    "href": "archive/posts_to_process/2021-10-28-first-post.html",
+    "title": "First blog post",
+    "section": "",
+    "text": "This is my first blog post on this website 🥳\nEvery now and then I’ll write about what’s going on with my research group, and also about random stuff that interest me.\nSee you around!"
+  },
+  {
+    "objectID": "archive/posts_to_process/2021-11-16-doubling-time.html",
+    "href": "archive/posts_to_process/2021-11-16-doubling-time.html",
+    "title": "Doubling Time",
+    "section": "",
+    "text": "Suppose you have a process that can be described by exponential growth. It could be anything: interests on an investment, the early phases of infection in a pandemic, whatever.\nIt is often convenient to have an idea how fast is the growth by answering the question:\n\nHow long will it take for \\(x\\) to double in size, given a growth of \\(n\\)% per year?\n\nThe rule of thumb I learned a while back is the following:\n\nDoubling time = \\(\\displaystyle\\frac{70}{n}\\) (in years)\n\nOf course, the time unit could be anything you like, I’ll deal here with years for simplicity’s sake. Specifically, let’s answer the question:\n\nIsrael has currently (2021) a population of 9.2 million, and a growth rate of 1.8% per year. How long will it take for the population to double, assuming a fixed growth rate?\n\nThe answer is about 39 years (70 divided by 1.8), but why?!\nLet’s call \\(x_0\\) the population size now, and the growth rate \\(n\\)%. After one year, the population will be\n{% include equation.html content=” x_1 = x_0 * ( 1 + ) ” %}\nAssume that after \\(k\\) years the population will be double, i.e.:\n{% include equation.html content=” x_k = x_0 * ( 1 + )^k = 2x_0. ” %}\nCancelling \\(x_0\\) we get\n{% include equation.html content=” ( 1 + )^k = 2. ” %}\nWe now take the natural logarith of both sides:\n{% include equation.html content=” k( 1 + ) = (2). ” %}\nNote that we took \\(k\\) out of the exponent and it now multiplies the logarithm on the left-hand side. Multiplying both sides by 100 yields\n{% include equation.html content=” 100k( 1 + ) = 100(2) . ” %}\nThat surely explains the number 70 in the rule of thumb! Because of the properties of logarithms, we put the number 100 as the exponent of the parenthesis:\n{% include equation.html content=” k( 1 + )^{100} = 100(2). ” %}\nWe are very close to the end! We now remind ourselves that we learned in Calculus the definition of the exponential function:\n{% include equation.html content=” (x) = _{m} ( 1 + )^{m}. ” %}\nBecause the number 100 is “quite big”, we will approximate the parenthesis inside the logarithm with the exponential function, thus\n{% include equation.html content=” k(n) = 100(2). ” %}\nThe logarithm is the inverse function of the exponential, therefore\n{% include equation.html content=” kn = (2). ” %}\nFinally, solving for \\(k\\), we have\n{% include equation.html content=” k = . ” %}\nWe have thus shown that the number of years \\(k\\) it will take for Israel to double it’s population is about \\(70/n = 70/1.8 = 38.88\\) years!!\nThe exact number, without any approximations, would be\n{% include equation.html content=” k = . ” %}\n{% include boxed-message.html title=“Conclusion” content=“👍 Very impressive rule of thumb 👍” %}"
+  },
+  {
+    "objectID": "archive/posts_to_process/2021-11-13-parabolic-hyperboloid.html",
+    "href": "archive/posts_to_process/2021-11-13-parabolic-hyperboloid.html",
+    "title": "Parabolic Hyperboloid",
+    "section": "",
+    "text": "Just like the hyperboloid of one sheet, the Parabolic Hyperboloid is a ruled surface. This means that it can be imagined as the surface one gets by swiping a straight line through space. In the image below, we see that each of the skewers is exactly straight, but together thay make this beautiful curved shape.\n\nThis project is quite easy to make with skewers, see its instructions here.\nThe equation that defines the surface of the parabolic hyperboloid is\n\\[\nz = Ax^2 - By^2,\n\\]\nwhere both \\(A\\) and \\(B\\) are positive numbers. This website allows us to play with the parameters and see how the surface responds.\nIn my opinion, a static image can’t convey the beauty of this shape, so I made this gif: \nIn 2020, Dillon Berger noted on Twitter that the shape of Pringles is a parabolic hyperboloid:\n\n\nThe reason Pringles fit so nicely in a cylindrical tube is because they're hyperbolic paraboloids plotted over a circular domain pic.twitter.com/BUzjPw7e17\n\n— 〈 Berger | Dillon 〉 (@InertialObservr) February 18, 2020\n\n\nThe company took notice of this (mildly) viral tweet, and sent Dillon a box full of parabolic hyperboloids 😁.\n\n\nThanks @Pringles, for sending me some of these delicious Hyperbolic Paraboloids! pic.twitter.com/L3WMgqObPM\n\n— 〈 Berger | Dillon 〉 (@InertialObservr) March 2, 2020\n\n\nThe lesson here is that it’s good to know your math 😜."
   }
 ]

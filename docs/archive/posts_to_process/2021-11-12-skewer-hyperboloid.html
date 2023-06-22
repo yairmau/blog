@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tristan O’Malley">
-<meta name="dcterms.date" content="2023-06-19">
+<meta name="description" content="When straight lines make a surprisingly pleasant curved surface">
 
-<title>Yair Mau - Welcome To My Blog</title>
+<title>Yair Mau - Skewer Hyperboloid</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,6 +53,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -79,50 +79,91 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Tristan O’Malley </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">June 19, 2023</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Skewer Hyperboloid</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">markdown</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    When straight lines make a surprisingly pleasant curved surface
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+</header>
+
+<p><img src="https://lh3.googleusercontent.com/bSIT1Wx9m6EHOE1rEXAfqcg_w7RWkpusE7rFfIxnPCQrziwVkGV51cWHwdvFxaOPh62CP-1bDEqzi0A4rn85lVngaKIgtMp2Oi-TNKDj-fjFggYSwS3VYxR1bpT9NR1sOqYXRBEd3K8=w2400.png" class="img-fluid"></p>
+<p>George Hart is again the hero of this project. Go check out his <a href="https://www.georgehart.com/skewers/skewer-hyperboloid.html">webpage</a> to see how to build this beautiful shape. All you need to make the skewer hyperboloid is a bunch of skewers and thin elastic bands.</p>
+<p>This is an easy project, and the end result is so fun to play with! It is surprising how smoothly this shape morphes when you pull and push the skewers to change the angle, it’s hard to explain, so you should definitely try it yourself 😁. See <a href="https://arbitrarilyclose.com/2020/05/11/mathartchallenge-day-55-hyperboloid-george-hart/">Annie Perkins’s video</a> to get a better idea:</p>
+<iframe width="560" height="315" src="https://videopress.com/embed/1GgXbg78" frameborder="0" allowfullscreen="">
+</iframe>
+<script src="https://videopress.com/videopress-iframe.js"></script>
+<p>The one thing I can add to George Hart’s page is that after many weeks and months the elastic bands will dry out and break! I gave a skewer hyperboloid to a friend, and one day he arrived at his office and found out that the whole thing had disintegrated overnight, and the skewers were all over the place. I’m still looking for a suitable substitute to the elastic bands. It must be something flexible that enables us to play with the construction, and at the same time something durable… I have not found yet the perfect material, if you have a suggestion please write to me.</p>
+<p>I wanted my hyperboloid to last for a long time, so after the construction was done, I used super glue to fix the skewers in a particular angle. Now I can’t play with it, but at least it will not disintegrate overnight in a few months time (hopefully!).</p>
+<p><img src="https://lh3.googleusercontent.com/JOawpE_90tFO1wExDW7ntL5zuQjUc1MIF18RN-uX9Ll_CtS9Q0j8e0-_fX_tHwULwuRxScTcLljivn_jc-Lyycq9SJftYeEi1_flGS1AOlzu6CbKZJsAFsx0Cvd7oM3_piY26i9vtoY=w2400.png" class="img-fluid"></p>
+<p>The mathematical name of this shape is “hyperboloid of one sheet”, and its equation is</p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{x^2}{A^2} + \frac{y^2}{B^2} - \frac{z^2}{C^2} = 0.
+\end{equation}
+\]</span></p>
+<p>When <span class="math inline">\(A=B\)</span> the horizontal cross-sections are circles, just like in our construction. The elastic bands effectively allow us to play with the parameter <span class="math inline">\(C\)</span>, which controls how fast the hyperboloid grows sideways. There is a wonderful widget in the <a href="https://nmd.pages.math.illinois.edu/quadrics/hyper1.html">Interactive Gallery of Quadric Surfaces</a>, its quite fun to play with.</p>
+<p>To see how this curved surface can be made entirely out of straight lines, one can define the surface as the set of all <a href="https://mathcurve.com/surfaces.gb/hyperboloid/hyperboloid1.shtml">parametric curves</a> of the kind</p>
+<p><span class="math display">\[
+\begin{align}
+x &amp;= A (\cos \theta - v \sin \theta)\\
+y &amp;= B (\sin \theta + v \cos \theta)\\
+z &amp;= C \varepsilon v.
+\end{align}
+\]</span></p>
+<p>Substitute the parametric equations above into the equation of the paraboloid and see that they satisfy it.</p>
+<p>There are actually two families of curves, for <span class="math inline">\(\epsilon=\pm 1\)</span>. I made a Mathematica plot of the two families of lines, in red (<span class="math inline">\(\varepsilon=1\)</span>) and in blue (<span class="math inline">\(\varepsilon=-1\)</span>), for ten <span class="math inline">\(\theta\)</span> values between 0 and <span class="math inline">\(2\pi\)</span>. It’s easy to see that each family of lines swirls in a different direction.</p>
+<p><img src="../../archive/blog/one-sheet-hyperboloid.png" class="img-fluid"></p>
+<p>The Mathematica code I wrote is</p>
+<pre><code>a = 1; b = 1; c = 1; h = 4; n = 10;
+p1 = ContourPlot3D[ (*hyperboloid*)   
+   x^2/a^2 + y^2/b^2 - z^2/c^2 == 1, {x, -h, h}, {y, -h, h}, {z, -h, 
+    h},
+   Mesh -&gt; None, ContourStyle -&gt; Opacity[0.4], AxesLabel -&gt; {x, y, z},
+    LabelStyle -&gt; Large
+   ];
+p2 = ParametricPlot3D[ (*red lines*)
+   Table[{
+     a (Cos[theta] - v Sin[theta]),
+     b (Sin[theta] + v Cos[theta]),
+     c v
+     }, {theta, 0, 2 Pi, 2 Pi/n}],
+   {v, -20, 20}, PlotStyle -&gt; {Red}
+   ];
+p3 = ParametricPlot3D[ (*blue lines*)
+   Table[{
+     a (Cos[theta] - v Sin[theta]),
+     b (Sin[theta] + v Cos[theta]),
+     - c v
+     }, {theta, 0, 2 Pi, 2 Pi/n}],
+   {v, -20, 20}, PlotStyle -&gt; {Blue}
+   ];
+Show[{p1, p2, p3}]</code></pre>
+<p><img src="https://lh3.googleusercontent.com/AUr9JxSqmlUh-5msmjWsPWkhDfaEu4Bs_sBySuug0RbnIXe0s_pQMQIU8VvTqCnVm28oB1gjxBvMRbn6vRP-Xjj44utw9QyU0Jl9iy1a--cOpYwX_nkCSyCAZhEeXtyQ_VS-Rw_gvjQ=w2400.png" class="img-fluid"></p>
 
 
 
