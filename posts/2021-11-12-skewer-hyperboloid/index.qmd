@@ -1,14 +1,13 @@
 ---
 layout: post
 title: Skewer Hyperboloid
-description: When straight lines make a surprisingly pleasant curved surface
-categories: [markdown]
+categories: [project]
 toc: false
-tags: [art, geek, frontpage]
+image: "skewer1.png"
 ---
 
 
-![](https://lh3.googleusercontent.com/bSIT1Wx9m6EHOE1rEXAfqcg_w7RWkpusE7rFfIxnPCQrziwVkGV51cWHwdvFxaOPh62CP-1bDEqzi0A4rn85lVngaKIgtMp2Oi-TNKDj-fjFggYSwS3VYxR1bpT9NR1sOqYXRBEd3K8=w2400)
+![](skewer1.png)
 
 George Hart is again the hero of this project.
 Go check out his [webpage](https://www.georgehart.com/skewers/skewer-hyperboloid.html) to see how to build this beautiful shape.
@@ -29,7 +28,7 @@ I have not found yet the perfect material, if you have a suggestion please write
 I wanted my hyperboloid to last for a long time, so after the construction was done, I used super glue to fix the skewers in a particular angle.
 Now I can't play with it, but at least it will not disintegrate overnight in a few months time (hopefully!).
 
-![](https://lh3.googleusercontent.com/JOawpE_90tFO1wExDW7ntL5zuQjUc1MIF18RN-uX9Ll_CtS9Q0j8e0-_fX_tHwULwuRxScTcLljivn_jc-Lyycq9SJftYeEi1_flGS1AOlzu6CbKZJsAFsx0Cvd7oM3_piY26i9vtoY=w2400)
+![](skewer2.png)
 
 The mathematical name of this shape is "hyperboloid of one sheet", and its equation is
 
@@ -59,11 +58,11 @@ There are actually two families of curves, for $\epsilon=\pm 1$.
 I made a Mathematica plot of the two families of lines, in red ($\varepsilon=1$) and in blue ($\varepsilon=-1$), for ten $\theta$ values between 0 and $2\pi$.
 It's easy to see that each family of lines swirls in a different direction.
 
-![](/archive/blog/one-sheet-hyperboloid.png)
+![](one-sheet-hyperboloid.png){fig-align="center"}
 
 The Mathematica code I wrote is
 
-```
+```mathematica
 a = 1; b = 1; c = 1; h = 4; n = 10;
 p1 = ContourPlot3D[ (*hyperboloid*)   
    x^2/a^2 + y^2/b^2 - z^2/c^2 == 1, {x, -h, h}, {y, -h, h}, {z, -h, 
@@ -90,7 +89,7 @@ p3 = ParametricPlot3D[ (*blue lines*)
 Show[{p1, p2, p3}]
 ```
 
-![](https://lh3.googleusercontent.com/AUr9JxSqmlUh-5msmjWsPWkhDfaEu4Bs_sBySuug0RbnIXe0s_pQMQIU8VvTqCnVm28oB1gjxBvMRbn6vRP-Xjj44utw9QyU0Jl9iy1a--cOpYwX_nkCSyCAZhEeXtyQ_VS-Rw_gvjQ=w2400)
+![](skewer3.png)
 
 
 

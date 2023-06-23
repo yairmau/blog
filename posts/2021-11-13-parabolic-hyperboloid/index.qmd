@@ -1,21 +1,19 @@
 ---
 layout: post
 title: Parabolic Hyperboloid
-description: I made something shaped as Pringles
-categories: [markdown]
+categories: [projects]
 toc: false
-tags: [art, geek]
+image: "pringle1.png"
 ---
 
 
-![](https://lh3.googleusercontent.com/G0kNd1cyDL5HT62fqh76h1Kt5kA0p1axYcwuaw8LHylYONFOyLgS_W9M7ZwDm0Xv-AgwjHdDM2HpjGz2akgwOev96So-j5AOS7aDdmUEdguBWhgWsCBkOtUD8rZe9dptkqzgmm5qLsk=w2400)
-
+![](pringle1)
 
 Just like the [hyperboloid of one sheet](https://yairmau.com/markdown/2021/11/12/skewer-hyperboloid.html), the Parabolic Hyperboloid is a ruled surface.
 This means that it can be imagined as the surface one gets by swiping a straight line through space.
 In the image below, we see that each of the skewers is exactly straight, but together thay make this beautiful curved shape.
 
-![](https://lh3.googleusercontent.com/hQyh_S4xMg0Fapq_g8cTvVGYilSjwoQC2MwhGOQ1aIhFtq_UUdNt1AvwWhLNfmJT0XRLsWeBXGdOpqm4iVhVgyiRsHx6u7GtS38UOcUJYZC7aPu2gANMZvqbO15nEVbQ0v4_BcTqPug=w2400)
+![](pringle2)
 
 This project is quite easy to make with skewers, see [its instructions here](https://mathcraft.wonderhowto.com/how-to/make-hyperbolic-paraboloid-using-skewers-0131751/).
 
