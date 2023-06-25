@@ -1,10 +1,17 @@
 ---
 layout: post
 title: Doubling Time
+description: "Here is an incredibly useful equation to calculate doubling times"
+date: 2021-11-16
+author: Yair Mau
 categories: [science]
 toc: false
+image: "population-growth.jpg.avif"
 title-block-banner: false
+freeze: auto
 ---
+
+![](population-growth.jpg.avif)
 
 :::{.alert .alert-primary}
 ### question
@@ -23,48 +30,46 @@ The rule of thumb I learned a while back is the following:
 > Doubling time = $\displaystyle\frac{70}{n}$ (in years) 
 
 Of course, the time unit could be anything you like, I'll deal here with years for simplicity's sake.
-Specifically, let's answer the question:
 
-
-The answer is about 39 years (70 divided by 1.8), but why?!
+The answer to the question about Israel in the box above is about 39 years (70 divided by 1.8), but why?!
 
 Let's call $x_0$ the population size now, and the growth rate $n$%.
 After one year, the population will be
 
 $$
-x_1 = x_0 \times \left( 1 + \frac{n}{100} \right)
+x_1 = x_0 \times \left( 1 + \frac{n}{100} \right).
 $$
 
-Assume that after $k$ years the population will be double, i.e.:
+Assume that after $y$ years the population will be double, i.e.:
 
 $$
-x_k = x_0 \times \left( 1 + \frac{n}{100} \right)^k = 2x_0.
+x_k = x_0 \times \left( 1 + \frac{n}{100} \right)^y = 2x_0.
 $$
 
 Cancelling $x_0$ we get
 
 $$
-\left( 1 + \frac{n}{100} \right)^k = 2.
+\left( 1 + \frac{n}{100} \right)^y = 2.
 $$
 
-We now take the natural logarith of both sides:
+We now take the natural logarithm of both sides:
 
 $$
-k\ln\left( 1 + \frac{n}{100} \right) = \ln(2).
+y\ln\left( 1 + \frac{n}{100} \right) = \ln(2).
 $$
 
 Note that we took $k$ out of the exponent and it now multiplies the logarithm on the left-hand side.
 Multiplying both sides by 100 yields
 
 $$
-100k\ln\left( 1 + \frac{n}{100} \right) = 100\ln(2) \simeq 69.3.
+100\,y\ln\left( 1 + \frac{n}{100} \right) = 100\ln(2) \simeq 69.3.
 $$
 
 That surely explains the number 70 in the rule of thumb!
 Because of the properties of logarithms, we put the number 100 as the exponent of the parenthesis:
 
 $$
-k\ln\left( 1 + \frac{n}{100} \right)^{100} = 100\ln(2).
+y\ln\left( 1 + \frac{n}{100} \right)^{100} = 100\ln(2).
 $$
 
 We are very close to the end!
@@ -77,27 +82,27 @@ $$
 Because the number 100 is "quite big", we will approximate the parenthesis inside the logarithm with the exponential function, thus
 
 $$
-k\ln\exp(n) = 100\ln(2).
+y\ln\exp(n) = 100\ln(2).
 $$
 
 The logarithm is the inverse function of the exponential, therefore
 
 $$
-kn = \displaystyle100\ln(2).
+y\,n = \displaystyle100\ln(2).
 $$
 
-Finally, solving for $k$, we have
+Finally, solving for $y$, we have
 
 $$
-k = \displaystyle\frac{100\ln(2)}{n} \simeq \frac{70}{n}.
+y = \displaystyle\frac{100\ln(2)}{n} \simeq \frac{70}{n}.
 $$
 
-We have thus shown that the number of years $k$ it will take for Israel to double it's population is about $70/n = 70/1.8 = 38.88$ years!!
+We have thus shown that the number of years $y$ it will take for Israel to double it's population is about $70/n = 70/1.8 = 38.88$ years!!
 
 The exact number, without any approximations, would be
 
 $$
-k = \displaystyle\frac{\ln(2)}{\ln(1+n/100)}\simeq 38.85.
+y = \displaystyle\frac{\ln(2)}{\ln(1+n/100)}\simeq 38.85.
 $$
 
 :::{.alert .alert-primary}
