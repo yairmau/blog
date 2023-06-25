@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yair Mau">
-<meta name="dcterms.date" content="2021-11-16">
-<meta name="description" content="Here is an incredibly useful equation to calculate doubling times">
+<meta name="dcterms.date" content="2021-10-28">
+<meta name="description" content="Crazy construction made of 72 pencils">
 
-<title>Yair Mau - Doubling Time</title>
+<title>Yair Mau - Hexastix</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,7 +63,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -96,15 +95,15 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Doubling Time</h1>
+<h1 class="title">Hexastix</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">science</div>
+    <div class="quarto-category">projects</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Here is an incredibly useful equation to calculate doubling times
+    Crazy construction made of 72 pencils
   </div>
 </div>
 
@@ -121,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 16, 2021</p>
+      <p class="date">October 28, 2021</p>
     </div>
   </div>
   
@@ -131,71 +130,22 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="population-growth.jpg.avif" class="img-fluid"></p>
-<section id="question" class="level3 alert alert-primary">
-<h3 class="anchored" data-anchor-id="question">question</h3>
-<p>Israel has currently (2021) a population of 9.2 million, and a growth rate of 1.8% per year. How long will it take for the population to double, assuming a fixed growth rate?</p>
-</section>
-<p>Suppose you have a process that can be described by exponential growth. It could be anything: interests on an investment, the early phases of infection in a pandemic, whatever.</p>
-<p>It is often convenient to have an idea how fast is the growth by answering the question:</p>
-<blockquote class="blockquote">
-<p>How long will it take for <span class="math inline">\(x\)</span> to double in size, given a growth of <span class="math inline">\(n\)</span>% per year?</p>
-</blockquote>
-<p>The rule of thumb I learned a while back is the following:</p>
-<blockquote class="blockquote">
-<p>Doubling time = <span class="math inline">\(\displaystyle\frac{70}{n}\)</span> (in years)</p>
-</blockquote>
-<p>Of course, the time unit could be anything you like, I’ll deal here with years for simplicity’s sake.</p>
-<p>The answer to the question about Israel in the box above is about 39 years (70 divided by 1.8), but why?!</p>
-<p>Let’s call <span class="math inline">\(x_0\)</span> the population size now, and the growth rate <span class="math inline">\(n\)</span>%. After one year, the population will be</p>
-<p><span class="math display">\[
-x_1 = x_0 \times \left( 1 + \frac{n}{100} \right).
-\]</span></p>
-<p>Assume that after <span class="math inline">\(y\)</span> years the population will be double, i.e.:</p>
-<p><span class="math display">\[
-x_k = x_0 \times \left( 1 + \frac{n}{100} \right)^y = 2x_0.
-\]</span></p>
-<p>Cancelling <span class="math inline">\(x_0\)</span> we get</p>
-<p><span class="math display">\[
-\left( 1 + \frac{n}{100} \right)^y = 2.
-\]</span></p>
-<p>We now take the natural logarithm of both sides:</p>
-<p><span class="math display">\[
-y\ln\left( 1 + \frac{n}{100} \right) = \ln(2).
-\]</span></p>
-<p>Note that we took <span class="math inline">\(k\)</span> out of the exponent and it now multiplies the logarithm on the left-hand side. Multiplying both sides by 100 yields</p>
-<p><span class="math display">\[
-100\,y\ln\left( 1 + \frac{n}{100} \right) = 100\ln(2) \simeq 69.3.
-\]</span></p>
-<p>That surely explains the number 70 in the rule of thumb! Because of the properties of logarithms, we put the number 100 as the exponent of the parenthesis:</p>
-<p><span class="math display">\[
-y\ln\left( 1 + \frac{n}{100} \right)^{100} = 100\ln(2).
-\]</span></p>
-<p>We are very close to the end! We now remind ourselves that we learned in Calculus the definition of the exponential function:</p>
-<p><span class="math display">\[
-\exp(x) = \displaystyle\lim_{m\rightarrow \infty} \left( 1 + \frac{x}{m} \right)^{m}.
-\]</span></p>
-<p>Because the number 100 is “quite big”, we will approximate the parenthesis inside the logarithm with the exponential function, thus</p>
-<p><span class="math display">\[
-y\ln\exp(n) = 100\ln(2).
-\]</span></p>
-<p>The logarithm is the inverse function of the exponential, therefore</p>
-<p><span class="math display">\[
-y\,n = \displaystyle100\ln(2).
-\]</span></p>
-<p>Finally, solving for <span class="math inline">\(y\)</span>, we have</p>
-<p><span class="math display">\[
-y = \displaystyle\frac{100\ln(2)}{n} \simeq \frac{70}{n}.
-\]</span></p>
-<p>We have thus shown that the number of years <span class="math inline">\(y\)</span> it will take for Israel to double it’s population is about <span class="math inline">\(70/n = 70/1.8 = 38.88\)</span> years!!</p>
-<p>The exact number, without any approximations, would be</p>
-<p><span class="math display">\[
-y = \displaystyle\frac{\ln(2)}{\ln(1+n/100)}\simeq 38.85.
-\]</span></p>
-<section id="conclusion" class="level3 alert alert-primary">
-<h3 class="anchored" data-anchor-id="conclusion">conclusion</h3>
-<p>👍 Very impressive rule of thumb 👍</p>
-</section>
+<p>I’m very proud of this construction I made about 4 years ago.</p>
+<p><img src="hexastix1.png" class="img-fluid"></p>
+<p>It sits prominently on my office shelf, it has never failed to impress the occasional visitor :) Although it looks complicated, this 72-pencil construction is not very hard to build! I followed Matt Parker’s youtube tutorial, it took me about 1.5 hours to make it, and another hour or so to glue it.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DelH1S32dOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+<p>Materials:</p>
+<ul>
+<li>72 pencils</li>
+<li>a few elastic bands</li>
+<li>super glue</li>
+</ul>
+<p>Here in Israel, I couldn’t find non-sharpened pencils. There is some risk of (small) injury if you don’t take care 😬.</p>
+<p>Without the elastic bands, this construction would not be stable. The problem is that with time the elastic bands get dry and disintegrate, so if you want to have this construction standing for a long time, you have to glue it. I put tiny drops of super glue in most of the touching points between the pencils, and it worked great!</p>
+<p>Enjoy making your own!</p>
+<p><img src="hexastix2.png" class="img-fluid"></p>
+<p>PS: I’m in my office at the university writing these words, and exactly now a student passed in the corridor and asked me about the Hexastix 😄</p>
 
 
 

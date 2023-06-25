@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Skewer Hyperboloid
-categories: [project]
-toc: false
+description: The crown you always wanted
+categories: [projects, math]
 image: "skewer1.png"
+date: 2021-11-12
 ---
 
 

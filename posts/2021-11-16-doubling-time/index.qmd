@@ -3,12 +3,8 @@ layout: post
 title: Doubling Time
 description: "Here is an incredibly useful equation to calculate doubling times"
 date: 2021-11-16
-author: Yair Mau
 categories: [science]
-toc: false
 image: "population-growth.jpg.avif"
-title-block-banner: false
-freeze: auto
 ---
 
 ![](population-growth.jpg.avif)

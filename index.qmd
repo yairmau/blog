@@ -1,5 +1,5 @@
 ---
-title: "myblog"
+title: ""
 listing:
   contents: posts
   sort: "date desc"
@@ -11,4 +11,6 @@ page-layout: full
 title-block-banner: false
 ---
 
-
+:::{.alert .alert-primary}
+# A clean desk is the sign of a sick mind
+:::

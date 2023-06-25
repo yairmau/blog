@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Parabolic Hyperboloid
-categories: [projects]
-toc: false
+description: A pringles-shaped construction
+date: 2021-11-13
+categories: [projects, math]
 image: "pringle1.png"
 ---
 

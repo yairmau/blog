@@ -2,14 +2,14 @@
 layout: post
 title: Hexastix
 description: Crazy construction made of 72 pencils
-categories: [markdown]
-toc: false
-tags: [art, frontpage]
+categories: [projects]
+date: 2021-10-28
+image: hexastix1.png
 ---
 
 I'm very proud of this construction I made about 4 years ago. 
 
-![](https://lh3.googleusercontent.com/BHOrTTV8b6A0XlTAy6Wo32zIH9UcjYDuZl_E0qWLBh2uX2U4OnuA0YjZKSwZMTz6LZJmqyJeMhSmNsu4tqA672pxy7iKBjpWYmVW8AmR-7yotP0GGCrYhNRktnspRfxpSYRR7n2oZkw=w2400)
+![](hexastix1)
 
 
 
@@ -20,6 +20,7 @@ I followed Matt Parker's youtube tutorial, it took me about 1.5 hours to make it
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DelH1S32dOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Materials:
+
 * 72 pencils
 * a few elastic bands
 * super glue
@@ -32,6 +33,6 @@ I put tiny drops of super glue in most of the touching points between the pencil
 
 Enjoy making your own!
 
-![](https://lh3.googleusercontent.com/fGONX8L-8ZOBix5F4tp8qYd46dTl5MDhbp4C_VOiIA56iqEB6f__vgztLsAu1tldAuF-0cq9ZC8suBh2-LwC1m8hKlp5vQ-lOAj7LEZYljCs9sY6KTr5cMUoWZYQnyMzE28V2Yvs854=w2400)
+![](hexastix2)
 
 PS: I'm in my office at the university writing these words, and exactly now a student passed in the corridor and asked me about the Hexastix 😄

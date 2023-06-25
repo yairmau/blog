@@ -4,22 +4,22 @@ project:
 
 website:
   title: "Yair Mau"
-  search: false
+  search: true
   favicon: archive/site_images/favicon.ico
   navbar:
     logo: archive/site_images/site-logo-light.png
     pinned: false
     collapse: true
-    search: false
+    search: true
 format:
   html:
     theme:
       light: [flatly, custom.scss, custom-light.scss]
-      dark: [darkly, custom.scss, custom-dark.scss]
+      # dark: [darkly, custom.scss, custom-dark.scss]
     css: styles.css
     highlight: false
     # https://quarto.org/docs/output-formats/html-code.html#highlighting
-    highlight-style: gruvbox
+    highlight-style: breezedark
     mainfont: Ubuntu
     monofont: Ubuntu Mono
     max-width: "700"

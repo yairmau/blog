@@ -2,20 +2,21 @@
 layout: post
 title: Pythagorean theorem
 description: One of the oldest theorems, always fresh :)
-categories: [markdown]
-tags: [geek, frontpage]
-toc: false
+categories: [math]
+date: 2021-10-28
+image: pythagoras.png
 ---
 
 I've been interested lately in the Pythagorean theorem, and the myriad of ways one can prove it.
 
-![](https://miro.medium.com/max/700/1*SsN2DG__Z5DyOI0uf7hbwQ.png)
+![](pythagoras.png)
 
 An excellent resource is the website [Cut The Knot](https://www.cut-the-knot.org/pythagoras/).
 
 Another great source is John C. Sparks'  [The Pythagorean Theorem: Crown Jewel of Mathematics](http://wpafbstem.com/media/math_resources/pythagorean_theorem.pdf).
 
+Finally, I would recommend Eli Maor's book, "The Pythagorean Theorem".
 
-I used my tablet to write down my own version of some of the nicest proofs, see below. 
+![](eli-maor-book.png){fig-align="center"}
 
-<object data="/archive/blog/pythagoras.pdf" width="800" height="800" type='application/pdf'></object>
+I used my tablet to write down my own version of some of the nicest proofs, [see here](pythagoras.pdf). 
