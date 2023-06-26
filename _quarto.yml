@@ -14,7 +14,9 @@ website:
 format:
   html:
     theme:
-      light: [flatly, custom.scss, custom-light.scss]
+      - flatly
+      - custom.scss
+      # - custom-light.scss
       # dark: [darkly, custom.scss, custom-dark.scss]
     css: styles.css
     highlight: false

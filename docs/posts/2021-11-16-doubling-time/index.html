@@ -148,50 +148,50 @@ ul.task-list li input[type="checkbox"] {
 <p>Of course, the time unit could be anything you like, I’ll deal here with years for simplicity’s sake.</p>
 <p>The answer to the question about Israel in the box above is about 39 years (70 divided by 1.8), but why?!</p>
 <p>Let’s call <span class="math inline">\(x_0\)</span> the population size now, and the growth rate <span class="math inline">\(n\)</span>%. After one year, the population will be</p>
-<p><span class="math display">\[
+<p><span id="eq-x1x0"><span class="math display">\[
 x_1 = x_0 \times \left( 1 + \frac{n}{100} \right).
-\]</span></p>
+\tag{1}\]</span></span></p>
 <p>Assume that after <span class="math inline">\(y\)</span> years the population will be double, i.e.:</p>
-<p><span class="math display">\[
+<p><span id="eq-after-y-years"><span class="math display">\[
 x_k = x_0 \times \left( 1 + \frac{n}{100} \right)^y = 2x_0.
-\]</span></p>
-<p>Cancelling <span class="math inline">\(x_0\)</span> we get</p>
-<p><span class="math display">\[
+\tag{2}\]</span></span></p>
+<p>Cancelling <span class="math inline">\(x_0\)</span> in <a href="#eq-after-y-years">Equation&nbsp;2</a> we get</p>
+<p><span id="eq-after-cancelling"><span class="math display">\[
 \left( 1 + \frac{n}{100} \right)^y = 2.
-\]</span></p>
-<p>We now take the natural logarithm of both sides:</p>
-<p><span class="math display">\[
+\tag{3}\]</span></span></p>
+<p>We now take the natural logarithm of both sides in <a href="#eq-after-cancelling">Equation&nbsp;3</a>, yielding:</p>
+<p><span id="eq-ytimes"><span class="math display">\[
 y\ln\left( 1 + \frac{n}{100} \right) = \ln(2).
-\]</span></p>
-<p>Note that we took <span class="math inline">\(k\)</span> out of the exponent and it now multiplies the logarithm on the left-hand side. Multiplying both sides by 100 yields</p>
-<p><span class="math display">\[
+\tag{4}\]</span></span></p>
+<p>Note that we took <span class="math inline">\(y\)</span> out of the exponent and it now multiplies the logarithm on the left-hand side. Multiplying both sides in <a href="#eq-ytimes">Equation&nbsp;4</a> by 100 yields</p>
+<p><span id="eq-100-times"><span class="math display">\[
 100\,y\ln\left( 1 + \frac{n}{100} \right) = 100\ln(2) \simeq 69.3.
-\]</span></p>
+\tag{5}\]</span></span></p>
 <p>That surely explains the number 70 in the rule of thumb! Because of the properties of logarithms, we put the number 100 as the exponent of the parenthesis:</p>
-<p><span class="math display">\[
+<p><span id="eq-100-in-the-exponent"><span class="math display">\[
 y\ln\left( 1 + \frac{n}{100} \right)^{100} = 100\ln(2).
-\]</span></p>
+\tag{6}\]</span></span></p>
 <p>We are very close to the end! We now remind ourselves that we learned in Calculus the definition of the exponential function:</p>
-<p><span class="math display">\[
+<p><span id="eq-exp-definition"><span class="math display">\[
 \exp(x) = \displaystyle\lim_{m\rightarrow \infty} \left( 1 + \frac{x}{m} \right)^{m}.
-\]</span></p>
-<p>Because the number 100 is “quite big”, we will approximate the parenthesis inside the logarithm with the exponential function, thus</p>
-<p><span class="math display">\[
+\tag{7}\]</span></span></p>
+<p>Because the number 100 is “quite big”, we will approximate the parenthesis inside the logarithm in <a href="#eq-100-in-the-exponent">Equation&nbsp;6</a> with the exponential function in <a href="#eq-exp-definition">Equation&nbsp;7</a>, yielding</p>
+<p><span id="eq-ln-exp"><span class="math display">\[
 y\ln\exp(n) = 100\ln(2).
-\]</span></p>
+\tag{8}\]</span></span></p>
 <p>The logarithm is the inverse function of the exponential, therefore</p>
-<p><span class="math display">\[
+<p><span id="eq-simpler-now"><span class="math display">\[
 y\,n = \displaystyle100\ln(2).
-\]</span></p>
+\tag{9}\]</span></span></p>
 <p>Finally, solving for <span class="math inline">\(y\)</span>, we have</p>
-<p><span class="math display">\[
+<p><span id="eq-before-last"><span class="math display">\[
 y = \displaystyle\frac{100\ln(2)}{n} \simeq \frac{70}{n}.
-\]</span></p>
+\tag{10}\]</span></span></p>
 <p>We have thus shown that the number of years <span class="math inline">\(y\)</span> it will take for Israel to double it’s population is about <span class="math inline">\(70/n = 70/1.8 = 38.88\)</span> years!!</p>
 <p>The exact number, without any approximations, would be</p>
-<p><span class="math display">\[
+<p><span id="eq-3885"><span class="math display">\[
 y = \displaystyle\frac{\ln(2)}{\ln(1+n/100)}\simeq 38.85.
-\]</span></p>
+\tag{11}\]</span></span></p>
 <section id="conclusion" class="level3 alert alert-primary">
 <h3 class="anchored" data-anchor-id="conclusion">conclusion</h3>
 <p>👍 Very impressive rule of thumb 👍</p>

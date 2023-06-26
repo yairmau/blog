@@ -34,64 +34,64 @@ After one year, the population will be
 
 $$
 x_1 = x_0 \times \left( 1 + \frac{n}{100} \right).
-$$
+$$ {#eq-x1x0}
 
 Assume that after $y$ years the population will be double, i.e.:
 
 $$
 x_k = x_0 \times \left( 1 + \frac{n}{100} \right)^y = 2x_0.
-$$
+$$ {#eq-after-y-years}
 
-Cancelling $x_0$ we get
+Cancelling $x_0$ in @eq-after-y-years we get
 
 $$
 \left( 1 + \frac{n}{100} \right)^y = 2.
-$$
+$$ {#eq-after-cancelling}
 
-We now take the natural logarithm of both sides:
+We now take the natural logarithm of both sides in @eq-after-cancelling, yielding:
 
 $$
 y\ln\left( 1 + \frac{n}{100} \right) = \ln(2).
-$$
+$$ {#eq-ytimes}
 
-Note that we took $k$ out of the exponent and it now multiplies the logarithm on the left-hand side.
-Multiplying both sides by 100 yields
+Note that we took $y$ out of the exponent and it now multiplies the logarithm on the left-hand side.
+Multiplying both sides in @eq-ytimes by 100 yields
 
 $$
 100\,y\ln\left( 1 + \frac{n}{100} \right) = 100\ln(2) \simeq 69.3.
-$$
+$$ {#eq-100-times}
 
 That surely explains the number 70 in the rule of thumb!
 Because of the properties of logarithms, we put the number 100 as the exponent of the parenthesis:
 
 $$
 y\ln\left( 1 + \frac{n}{100} \right)^{100} = 100\ln(2).
-$$
+$$ {#eq-100-in-the-exponent}
 
 We are very close to the end!
 We now remind ourselves that we learned in Calculus the definition of the exponential function:
 
 $$
 \exp(x) = \displaystyle\lim_{m\rightarrow \infty} \left( 1 + \frac{x}{m} \right)^{m}.
-$$
+$$ {#eq-exp-definition}
 
-Because the number 100 is "quite big", we will approximate the parenthesis inside the logarithm with the exponential function, thus
+Because the number 100 is "quite big", we will approximate the parenthesis inside the logarithm in @eq-100-in-the-exponent with the exponential function in @eq-exp-definition, yielding
 
 $$
 y\ln\exp(n) = 100\ln(2).
-$$
+$$ {#eq-ln-exp}
 
 The logarithm is the inverse function of the exponential, therefore
 
 $$
 y\,n = \displaystyle100\ln(2).
-$$
+$$ {#eq-simpler-now}
 
 Finally, solving for $y$, we have
 
 $$
 y = \displaystyle\frac{100\ln(2)}{n} \simeq \frac{70}{n}.
-$$
+$$ {#eq-before-last}
 
 We have thus shown that the number of years $y$ it will take for Israel to double it's population is about $70/n = 70/1.8 = 38.88$ years!!
 
@@ -99,7 +99,7 @@ The exact number, without any approximations, would be
 
 $$
 y = \displaystyle\frac{\ln(2)}{\ln(1+n/100)}\simeq 38.85.
-$$
+$$ {#eq-3885}
 
 :::{.alert .alert-primary}
 ### conclusion

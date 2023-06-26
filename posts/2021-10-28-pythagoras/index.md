@@ -20,3 +20,4 @@ Finally, I would recommend Eli Maor's book, "The Pythagorean Theorem".
 ![](eli-maor-book.png){fig-align="center"}
 
 I used my tablet to write down my own version of some of the nicest proofs, [see here](pythagoras.pdf). 
+
