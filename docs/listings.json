@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2021-10-27-can-problem/can.html",
       "/posts/2021-11-16-doubling-time/index.html",
       "/posts/2021-11-13-parabolic-hyperboloid/index.html",
       "/posts/2021-11-12-skewer-hyperboloid/index.html",
