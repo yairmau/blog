@@ -5,7 +5,8 @@ date: "2021-10-27"
 categories: [question]
 image: "can.png"
 title-block-banner: false
-
+execute:
+  freeze: auto  # re-render only when source changes
 ---
 
 ![](can.png)
@@ -15,7 +16,7 @@ title-block-banner: false
 How does the center of mass of a can of soda vary with the level of the liquid?
 :::
 
-The center of mass of the aluminum can does not change, and assuming that the can in perfectly symmetric, its height should be half of the total can height. Calling the total height $L$, we have that $r_\text{can} = L/2$.
+The center of mass of the aluminum can does not change, and assuming that the can is perfectly symmetric, its height should be half of the total can height. Calling the total height $L$, we have that $r_\text{can} = L/2$.
 
 As the soda level in the can goes down, two things happen at the same time:
 
