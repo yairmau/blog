@@ -1,0 +1,97 @@
+---
+layout: post
+title: A4 paper
+description: What's the logic behind this paper?
+date: 2025-02-27
+categories: [projects, math]
+image: "a4.webp"
+---
+
+![](a4.webp)
+
+The various sizes of the A series have an interesting property.
+If, for example, you divide the A4 sheet into two equal parts, each of the resulting rectangles will be an A5 sheet, whose proportions are exactly the same as the original A4.
+
+## what is this proportion?
+
+Let's call $a$ and $b$ the long and short sides of the A4 sheet.
+
+**Question: what is $a/b$?**
+
+The sides of the A5 sheet are then $b$ (long side) and $a/2$ (short side).
+Because the proportions of the A5 are exactly the same as those of the A4, we have
+
+$$
+\frac{a}{b} = \frac{b}{\frac{a}{2}},
+$$
+
+which after cross-multiplying gives
+
+$$
+\frac{a^2}{b^2} = 2.
+$$
+
+Taking the square root gives
+
+$$
+\frac{a}{b} = \sqrt{2}.
+$$
+
+## Why A4? What's A0?
+
+Now that we found the proportion of the A series, we can ask a follow up:
+
+**Question: Why does the A4 have this specific size? What's special about it?**
+
+The A series starts with A0, which has the nice property of having an area of 1 m$^2$.
+
+| Size | Area (m²) |
+|------|-----------|
+| A0   | $1$       |
+| A1   | $1/2$     |
+| A2   | $1/4$     |
+| A3   | $1/8$     |
+| A4   | $1/16$    |
+
+We found that the area of an A4 is $1/16$ m$^2$, so now we can write a system of two equations:
+
+$$
+\begin{align}
+\frac{a}{b} &= \sqrt{2} \\
+a \cdot b &= \frac{1}{16}
+\end{align}
+$$
+
+Solving for $a$ in the first equation gives $a=\sqrt{2}b$, and substituting this into the second equation gives
+
+$$
+\begin{align}
+b^2\sqrt{2} &= \frac{1}{16} \\
+\Rightarrow b^2 &= \frac{1}{\sqrt{2}\cdot 2^4} = \frac{1}{2^{\frac{1}{2}}\cdot 2^4} = \frac{1}{2^{\frac{1}{2}+4}} \\
+\Rightarrow b &= 2^{-\frac{1}{4}-2}
+\end{align}
+$$
+
+and clearly
+
+$$
+\begin{align}
+a &= \sqrt{2}b \\
+\Rightarrow a &= 2^{\frac{1}{2}}2^{-\frac{1}{4}-2} = 2^{\frac{1}{2}-\frac{1}{4}-2} \\
+\Rightarrow a &= 2^{\frac{1}{4}-2} \\
+\end{align}
+$$
+
+To sum up:
+$$
+a = 2^{\frac{1}{4}-2} \qquad b = 2^{-\frac{1}{4}-2}
+$$
+
+```{python}
+a = 2**(1/4-2)   # in meters
+b = 2**(-1/4-2)  # in meters
+print(f"a={1000*a:.0f} mm, b={1000*b:.0f} mm")
+print("Check out the exact values in the figure at the top of this post")
+```
+
+And this, my friends, concludes today's exercise :)

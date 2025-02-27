@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yair Mau">
-<meta name="dcterms.date" content="2021-11-12">
-<meta name="description" content="The crown you always wanted">
+<meta name="dcterms.date" content="2025-02-27">
+<meta name="description" content="What’s the logic behind this paper?">
 
-<title>Skewer Hyperboloid – Yair Mau</title>
+<title>A4 paper – Yair Mau</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,7 +168,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Skewer Hyperboloid</h1>
+<h1 class="title">A4 paper</h1>
   <div class="quarto-categories">
     <div class="quarto-category">projects</div>
     <div class="quarto-category">math</div>
@@ -177,7 +177,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    The crown you always wanted
+    What’s the logic behind this paper?
   </div>
 </div>
 
@@ -194,7 +194,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 12, 2021</p>
+      <p class="date">February 27, 2025</p>
     </div>
   </div>
   
@@ -206,65 +206,100 @@ window.Quarto = {
 </header>
 
 
-<p><img src="skewer1.png" class="img-fluid"></p>
-<p>George Hart is again the hero of this project. Go check out his <a href="https://www.georgehart.com/skewers/skewer-hyperboloid.html">webpage</a> to see how to build this beautiful shape. All you need to make the skewer hyperboloid is a bunch of skewers and thin elastic bands.</p>
-<p>This is an easy project, and the end result is so fun to play with! It is surprising how smoothly this shape morphes when you pull and push the skewers to change the angle, it’s hard to explain, so you should definitely try it yourself 😁. See <a href="https://arbitrarilyclose.com/2020/05/11/mathartchallenge-day-55-hyperboloid-george-hart/">Annie Perkins’s video</a> to get a better idea:</p>
-<iframe width="560" height="315" src="https://videopress.com/embed/1GgXbg78" frameborder="0" allowfullscreen="">
-</iframe>
-<script src="https://videopress.com/videopress-iframe.js"></script>
-<p>The one thing I can add to George Hart’s page is that after many weeks and months the elastic bands will dry out and break! I gave a skewer hyperboloid to a friend, and one day he arrived at his office and found out that the whole thing had disintegrated overnight, and the skewers were all over the place. I’m still looking for a suitable substitute to the elastic bands. It must be something flexible that enables us to play with the construction, and at the same time something durable… I have not found yet the perfect material, if you have a suggestion please write to me.</p>
-<p>I wanted my hyperboloid to last for a long time, so after the construction was done, I used super glue to fix the skewers in a particular angle. Now I can’t play with it, but at least it will not disintegrate overnight in a few months time (hopefully!).</p>
-<p><img src="skewer2.png" class="img-fluid"></p>
-<p>The mathematical name of this shape is “hyperboloid of one sheet”, and its equation is</p>
+<p><img src="a4.webp" class="img-fluid"></p>
+<p>The various sizes of the A series have an interesting property. If, for example, you divide the A4 sheet into two equal parts, each of the resulting rectangles will be an A5 sheet, whose proportions are exactly the same as the original A4.</p>
+<section id="what-is-this-proportion" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-this-proportion">what is this proportion?</h2>
+<p>Let’s call <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> the long and short sides of the A4 sheet.</p>
+<p><strong>Question: what is <span class="math inline">\(a/b\)</span>?</strong></p>
+<p>The sides of the A5 sheet are then <span class="math inline">\(b\)</span> (long side) and <span class="math inline">\(a/2\)</span> (short side). Because the proportions of the A5 are exactly the same as those of the A4, we have</p>
 <p><span class="math display">\[
-\begin{equation}
-\frac{x^2}{A^2} + \frac{y^2}{B^2} - \frac{z^2}{C^2} = 0.
-\end{equation}
+\frac{a}{b} = \frac{b}{\frac{a}{2}},
 \]</span></p>
-<p>When <span class="math inline">\(A=B\)</span> the horizontal cross-sections are circles, just like in our construction. The elastic bands effectively allow us to play with the parameter <span class="math inline">\(C\)</span>, which controls how fast the hyperboloid grows sideways. There is a wonderful widget in the <a href="https://nmd.pages.math.illinois.edu/quadrics/hyper1.html">Interactive Gallery of Quadric Surfaces</a>, its quite fun to play with.</p>
-<p>To see how this curved surface can be made entirely out of straight lines, one can define the surface as the set of all <a href="https://mathcurve.com/surfaces.gb/hyperboloid/hyperboloid1.shtml">parametric curves</a> of the kind</p>
+<p>which after cross-multiplying gives</p>
+<p><span class="math display">\[
+\frac{a^2}{b^2} = 2.
+\]</span></p>
+<p>Taking the square root gives</p>
+<p><span class="math display">\[
+\frac{a}{b} = \sqrt{2}.
+\]</span></p>
+</section>
+<section id="why-a4-whats-a0" class="level2">
+<h2 class="anchored" data-anchor-id="why-a4-whats-a0">Why A4? What’s A0?</h2>
+<p>Now that we found the proportion of the A series, we can ask a follow up:</p>
+<p><strong>Question: Why does the A4 have this specific size? What’s special about it?</strong></p>
+<p>The A series starts with A0, which has the nice property of having an area of 1 m<span class="math inline">\(^2\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Size</th>
+<th>Area (m²)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A0</td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td>A1</td>
+<td><span class="math inline">\(1/2\)</span></td>
+</tr>
+<tr class="odd">
+<td>A2</td>
+<td><span class="math inline">\(1/4\)</span></td>
+</tr>
+<tr class="even">
+<td>A3</td>
+<td><span class="math inline">\(1/8\)</span></td>
+</tr>
+<tr class="odd">
+<td>A4</td>
+<td><span class="math inline">\(1/16\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>We found that the area of an A4 is <span class="math inline">\(1/16\)</span> m<span class="math inline">\(^2\)</span>, so now we can write a system of two equations:</p>
 <p><span class="math display">\[
 \begin{align}
-x &amp;= A (\cos \theta - v \sin \theta)\\
-y &amp;= B (\sin \theta + v \cos \theta)\\
-z &amp;= C \varepsilon v.
+\frac{a}{b} &amp;= \sqrt{2} \\
+a \cdot b &amp;= \frac{1}{16}
 \end{align}
 \]</span></p>
-<p>Substitute the parametric equations above into the equation of the paraboloid and see that they satisfy it.</p>
-<p>There are actually two families of curves, for <span class="math inline">\(\epsilon=\pm 1\)</span>. I made a Mathematica plot of the two families of lines, in red (<span class="math inline">\(\varepsilon=1\)</span>) and in blue (<span class="math inline">\(\varepsilon=-1\)</span>), for ten <span class="math inline">\(\theta\)</span> values between 0 and <span class="math inline">\(2\pi\)</span>. It’s easy to see that each family of lines swirls in a different direction.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="one-sheet-hyperboloid.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
+<p>Solving for <span class="math inline">\(a\)</span> in the first equation gives <span class="math inline">\(a=\sqrt{2}b\)</span>, and substituting this into the second equation gives</p>
+<p><span class="math display">\[
+\begin{align}
+b^2\sqrt{2} &amp;= \frac{1}{16} \\
+\Rightarrow b^2 &amp;= \frac{1}{\sqrt{2}\cdot 2^4} = \frac{1}{2^{\frac{1}{2}}\cdot 2^4} = \frac{1}{2^{\frac{1}{2}+4}} \\
+\Rightarrow b &amp;= 2^{-\frac{1}{4}-2}
+\end{align}
+\]</span></p>
+<p>and clearly</p>
+<p><span class="math display">\[
+\begin{align}
+a &amp;= \sqrt{2}b \\
+\Rightarrow a &amp;= 2^{\frac{1}{2}}2^{-\frac{1}{4}-2} = 2^{\frac{1}{2}-\frac{1}{4}-2} \\
+\Rightarrow a &amp;= 2^{\frac{1}{4}-2} \\
+\end{align}
+\]</span></p>
+<p>To sum up: <span class="math display">\[
+a = 2^{\frac{1}{4}-2} \qquad b = 2^{-\frac{1}{4}-2}
+\]</span></p>
+<div id="b860cc23" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span><span class="op">**</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">4</span><span class="op">-</span><span class="dv">2</span>)   <span class="co"># in meters</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span><span class="op">**</span>(<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="dv">4</span><span class="op">-</span><span class="dv">2</span>)  <span class="co"># in meters</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a=</span><span class="sc">{</span><span class="dv">1000</span><span class="op">*</span>a<span class="sc">:.0f}</span><span class="ss"> mm, b=</span><span class="sc">{</span><span class="dv">1000</span><span class="op">*</span>b<span class="sc">:.0f}</span><span class="ss"> mm"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Check out the exact values in the figure at the top of this post"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a=297 mm, b=210 mm
+Check out the exact values in the figure at the top of this post</code></pre>
 </div>
-<p>The Mathematica code I wrote is</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">a</span> <span class="ex">=</span> <span class="dv">1</span>; <span class="fu">b</span> <span class="ex">=</span> <span class="dv">1</span>; <span class="fu">c</span> <span class="ex">=</span> <span class="dv">1</span>; <span class="fu">h</span> <span class="ex">=</span> <span class="dv">4</span>; <span class="fu">n</span> <span class="ex">=</span> <span class="dv">10</span>;</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ex">=</span> <span class="fu">ContourPlot3D</span><span class="op">[</span> <span class="co">(*hyperboloid*)</span>   </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">x</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">a</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">y</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">b</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fu">z</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">c</span><span class="sc">^</span><span class="dv">2</span> <span class="ex">==</span> <span class="dv">1</span><span class="op">,</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="sc">-</span><span class="fu">h</span><span class="op">,</span> <span class="fu">h</span><span class="op">},</span> <span class="op">{</span><span class="fu">y</span><span class="op">,</span> <span class="sc">-</span><span class="fu">h</span><span class="op">,</span> <span class="fu">h</span><span class="op">},</span> <span class="op">{</span><span class="fu">z</span><span class="op">,</span> <span class="sc">-</span><span class="fu">h</span><span class="op">,</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">h</span><span class="op">},</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Mesh</span> <span class="ot">-&gt;</span> <span class="cn">None</span><span class="op">,</span> <span class="fu">ContourStyle</span> <span class="ot">-&gt;</span> <span class="fu">Opacity</span><span class="op">[</span><span class="fl">0.4</span><span class="op">],</span> <span class="fu">AxesLabel</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">x</span><span class="op">,</span> <span class="fu">y</span><span class="op">,</span> <span class="fu">z</span><span class="op">},</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LabelStyle</span> <span class="ot">-&gt;</span> <span class="fu">Large</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">]</span>;</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ex">=</span> <span class="fu">ParametricPlot3D</span><span class="op">[</span> <span class="co">(*red lines*)</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Table</span><span class="op">[{</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>     <span class="fu">a</span> (<span class="fu">Cos</span><span class="op">[</span>theta<span class="op">]</span> <span class="sc">-</span> <span class="fu">v</span> <span class="fu">Sin</span><span class="op">[</span>theta<span class="op">]</span>)<span class="op">,</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>     <span class="fu">b</span> (<span class="fu">Sin</span><span class="op">[</span>theta<span class="op">]</span> <span class="sc">+</span> <span class="fu">v</span> <span class="fu">Cos</span><span class="op">[</span>theta<span class="op">]</span>)<span class="op">,</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">c</span> <span class="fu">v</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>     <span class="op">},</span> <span class="op">{</span>theta<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="sc">/</span><span class="fu">n</span><span class="op">}],</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="sc">-</span><span class="dv">20</span><span class="op">,</span> <span class="dv">20</span><span class="op">},</span> <span class="fu">PlotStyle</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Red</span><span class="op">}</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   <span class="op">]</span>;</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>p3 <span class="ex">=</span> <span class="fu">ParametricPlot3D</span><span class="op">[</span> <span class="co">(*blue lines*)</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Table</span><span class="op">[{</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>     <span class="fu">a</span> (<span class="fu">Cos</span><span class="op">[</span>theta<span class="op">]</span> <span class="sc">-</span> <span class="fu">v</span> <span class="fu">Sin</span><span class="op">[</span>theta<span class="op">]</span>)<span class="op">,</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>     <span class="fu">b</span> (<span class="fu">Sin</span><span class="op">[</span>theta<span class="op">]</span> <span class="sc">+</span> <span class="fu">v</span> <span class="fu">Cos</span><span class="op">[</span>theta<span class="op">]</span>)<span class="op">,</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>     <span class="sc">-</span> <span class="fu">c</span> <span class="fu">v</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>     <span class="op">},</span> <span class="op">{</span>theta<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="sc">/</span><span class="fu">n</span><span class="op">}],</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="sc">-</span><span class="dv">20</span><span class="op">,</span> <span class="dv">20</span><span class="op">},</span> <span class="fu">PlotStyle</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Blue</span><span class="op">}</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>   <span class="op">]</span>;</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[{</span>p1<span class="op">,</span> p2<span class="op">,</span> p3<span class="op">}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="skewer3.png" class="img-fluid"></p>
+</div>
+<p>And this, my friends, concludes today’s exercise :)</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
