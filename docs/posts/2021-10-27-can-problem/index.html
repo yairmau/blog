@@ -212,7 +212,7 @@ window.Quarto = {
 </ol>
 <p>At the very beginning both centers of mass are at <span class="math inline">\(L/2\)</span>, and so is the center of mass of the whole thing. At the end, the liquid is depleated and does not contribute anything to the center of mass, so again the whole system has its center of mass at <span class="math inline">\(L/2\)</span>. Can we figure out what equation gives us the total center of mass as a function of the liquid level?</p>
 <p>The center of mass of the system is given by <span id="eq-center-of-mass1"><span class="math display">\[
-r_{cm} = \frac{r_\text{can}\cdot m_\text{can} + r_\text{liq}\cdot m_\text{liq}}{m_\text{can} + m_\text{liq}},
+r_{cm}(h) = \frac{r_\text{can}\cdot m_\text{can} + r_\text{liq}\cdot m_\text{liq}}{m_\text{can} + m_\text{liq}},
 \tag{1}\]</span></span> where</p>
 <ul>
 <li><span class="math inline">\(m_\text{can}\)</span> is the mass of the aluminum can,</li>
@@ -225,7 +225,7 @@ r_{cm} = \frac{r_\text{can}\cdot m_\text{can} + r_\text{liq}\cdot m_\text{liq}}{
 </ul>
 <p>Substituting these quantities into <a href="#eq-center-of-mass1" class="quarto-xref">Equation&nbsp;1</a> gives</p>
 <p><span id="eq-center-of-mass-simple"><span class="math display">\[
-r_{cm} = \frac{C \frac{L}{2} + \frac{h^2}{2}}{C+h},
+r_{cm}(h) = \frac{C \frac{L}{2} + \frac{h^2}{2}}{C+h},
 \tag{2}\]</span></span> where the constant <span class="math inline">\(C\)</span> is <span class="math display">\[
 C = \frac{m_\text{can}}{\rho \cdot \pi R^2}.
 \]</span></p>
@@ -239,18 +239,16 @@ C = \frac{m_\text{can}}{\rho \cdot \pi R^2}.
 <p>So how does <a href="#eq-center-of-mass-simple" class="quarto-xref">Equation&nbsp;2</a> look like?</p>
 <p><img src="can_graph.png" class="img-fluid"></p>
 <p>Using the values above, we find that the lowest value for the center of mass of the whole system is when the soda has a level of only 6.6 mm! This is when the can should be less likely to topple, because the center of mass is so low (relative the the total mass).</p>
-<p>I’ll finish by copying here the Python code I used to produce the graph above.</p>
-<p>Import a bunch of packages.</p>
-<div class="cell" data-execution_count="1">
+<p>I’ll finish with the Python code I used to produce the graph above.</p>
+<div id="cell-2" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"ticks"</span>, font_scale<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"ticks"</span>, font_scale<span class="op">=</span><span class="fl">1.5</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols, diff, solve</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.abc <span class="im">import</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Define the problem parameters, and find the lowest center of mass.</p>
-<div class="cell" data-execution_count="2">
+<div id="cell-3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">122.0</span> <span class="co"># mm</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> <span class="fl">3.31</span> <span class="co"># mm</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Mcan <span class="op">=</span> <span class="dv">14</span> <span class="co"># g</span></span>
@@ -269,17 +267,16 @@ C = \frac{m_\text{can}}{\rho \cdot \pi R^2}.
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Solve for x where the derivative equals zero</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>solutions <span class="op">=</span> solve(f_prime, x)</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the solutions</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"We found </span><span class="sc">{</span><span class="bu">len</span>(solutions)<span class="sc">:d}</span><span class="ss"> solutions: "</span>, solutions)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(solutions)</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># choose the physically relevant solution</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>h_min<span class="op">=</span> solutions[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>We found 2 solutions:  [-7.36225033226790, 6.56937517541552]</code></pre>
+<pre><code>[-7.36225033226790, 6.56937517541552]</code></pre>
 </div>
 </div>
-<p>Plot.</p>
-<div class="cell" data-execution_count="3">
+<div id="cell-4" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ax.plot(h, Rcm, lw<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ax.plot(h, Rcm, lw<span class="op">=</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">"xkcd:hot pink"</span>, clip_on<span class="op">=</span><span class="va">False</span>, zorder<span class="op">=</span><span class="dv">100</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f"can is less likely to topple when</span><span class="ch">\n</span><span class="ss">level = </span><span class="sc">{</span>h_min<span class="sc">:.1f}</span><span class="ss"> mm"</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(h_min, RCM(h_min)), xycoords<span class="op">=</span><span class="st">'data'</span>,</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">50</span>), textcoords<span class="op">=</span><span class="st">'data'</span>,</span>
@@ -292,12 +289,18 @@ C = \frac{m_\text{can}}{\rho \cdot \pi R^2}.
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"soda level (mm)"</span>,</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"center of mass (mm)"</span>,</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    ylim<span class="op">=</span>[<span class="dv">0</span>,L<span class="op">/</span><span class="dv">2</span><span class="op">+</span><span class="dv">5</span>],</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"center of mass of a can of soda partially full"</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">"can_graph.png"</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    xlim<span class="op">=</span>[<span class="dv">0</span>, h[<span class="op">-</span><span class="dv">1</span>]],</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"center of mass of a can of soda partially full"</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># hide the right and top spines</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'right'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>ax.spines[<span class="st">'top'</span>].set_visible(<span class="va">False</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">"can_graph.png"</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" width="606" height="476" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
