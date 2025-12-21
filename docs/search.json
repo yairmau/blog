@@ -14,18 +14,25 @@
     "text": "This is my first blog post on this website 🥳\nEvery now and then I’ll write about what’s going on with my research group, and also about random stuff that interest me.\nSee you around!"
   },
   {
-    "objectID": "posts/2021-11-08-tomoko-fuse/index.html",
-    "href": "posts/2021-11-08-tomoko-fuse/index.html",
-    "title": "Tomoko Fuse Unit Origami",
+    "objectID": "posts/2025-09-17-celestial/index.html",
+    "href": "posts/2025-09-17-celestial/index.html",
+    "title": "Celestial",
     "section": "",
-    "text": "This structure has the general shape of a dodecahedron, with 12 beautiful pentagonal stars embeded in it. I found a while back a scan of the book Tomoko Fuse Unit Origami Fantasy. The book is all written in japanese, but I could make sense of the diagrams.\nTomoko Fuse is a master of modular origami, just google her name and you’ll find tons of fun projects.\nI used craft paper to give the structure a muted tones and a rustic feel. I think it turned out pretty good 😊."
+    "text": "They call it online the Celestial Kusudama.\nThese are the instructions to Joseph Hwang’s design.\n\n\nIn geometry, this is the Rhombic hexecontahedron, one of the setllations of the Rhombic triacontahedron.\nThis is the same shape as Wolfram Mathematica’s logo."
   },
   {
-    "objectID": "posts/2021-10-28-pythagoras/index.html",
-    "href": "posts/2021-10-28-pythagoras/index.html",
-    "title": "Pythagorean theorem",
+    "objectID": "posts/2025-06-14-phizz/index.html",
+    "href": "posts/2025-06-14-phizz/index.html",
+    "title": "PHiZZ",
     "section": "",
-    "text": "I’ve been interested lately in the Pythagorean theorem, and the myriad of ways one can prove it.\n\nAn excellent resource is the website Cut The Knot.\nAnother great source is John C. Sparks’ The Pythagorean Theorem: Crown Jewel of Mathematics.\nFinally, I would recommend Eli Maor’s book, “The Pythagorean Theorem”.\n\n\n\n\n\nI used my tablet to write down my own version of some of the nicest proofs, see here."
+    "text": "The PHiZZ module is probably the easiest modular origami unit to fold, and it is also very versatile. PHiZZ stands for pentagon-hexagon zig-zag unit, because you can make a shape made of pentagons and hexagons.\nThe shape below is make of 12 pentagons. \nFrom the excellent origametry.net, we learn how to fold the PHiZZ unit.\n\nTo put the units together, follow this:\n\nIt is nice to build shapes out of 3 colors, which means that we can construct a Hamiltonian path through the shape, which is a path that visits each vertex exactly once. See the “football” below (12 pentagons, each surrounded by 5 hexagons). If you choose one color to ignore, you can think of the hamiltonian path as the one that is made of the other two colors.\n\nExtra links:\n\nNotes on Spherical Buckyballs – Part 1\nNotes on Spherical Buckyballs – Part 2\nLarge Phizz Buckyball"
+  },
+  {
+    "objectID": "posts/2021-11-13-parabolic-hyperboloid/index.html",
+    "href": "posts/2021-11-13-parabolic-hyperboloid/index.html",
+    "title": "Parabolic Hyperboloid",
+    "section": "",
+    "text": "Just like the hyperboloid of one sheet, the Parabolic Hyperboloid is a ruled surface. This means that it can be imagined as the surface one gets by swiping a straight line through space. In the image below, we see that each of the skewers is exactly straight, but together thay make this beautiful curved shape.\n\nThis project is quite easy to make with skewers, see its instructions here.\nThe equation that defines the surface of the parabolic hyperboloid is\n\\[\nz = Ax^2 - By^2,\n\\]\nwhere both \\(A\\) and \\(B\\) are positive numbers. This website allows us to play with the parameters and see how the surface responds.\nIn my opinion, a static image can’t convey the beauty of this shape, so I made this gif: \nIn 2020, Dillon Berger noted on Twitter that the shape of Pringles is a parabolic hyperboloid:\n\n\nThe reason Pringles fit so nicely in a cylindrical tube is because they're hyperbolic paraboloids plotted over a circular domain pic.twitter.com/BUzjPw7e17\n\n— 〈 Berger | Dillon 〉 (@InertialObservr) February 18, 2020\n\n\nThe company took notice of this (mildly) viral tweet, and sent Dillon a box full of parabolic hyperboloids 😁.\n\n\nThanks @Pringles, for sending me some of these delicious Hyperbolic Paraboloids! pic.twitter.com/L3WMgqObPM\n\n— 〈 Berger | Dillon 〉 (@InertialObservr) March 2, 2020\n\n\nThe lesson here is that it’s good to know your math 😜."
   },
   {
     "objectID": "posts/2021-10-28-hexastix/index.html",
@@ -84,18 +91,46 @@
     "text": "These instructions are from the book “Exquisite Modular Origami” by Meenakshi Mukerji (pages 24-27 in this link).\nPages 24-25: \nPages 26-27: \nIf you prefer a video, see below.\n\n\nThe small and great stellated dodecahedra are two of the four Kepler-Poinsot solids.\n Image source: Wolfram Mathworld\nSee the video below to see the beautiful symmetry of these shapes, and how they relate to the dodecahedron."
   },
   {
-    "objectID": "posts/2021-11-13-parabolic-hyperboloid/index.html",
-    "href": "posts/2021-11-13-parabolic-hyperboloid/index.html",
-    "title": "Parabolic Hyperboloid",
+    "objectID": "posts/2025-09-17-snapology/index.html",
+    "href": "posts/2025-09-17-snapology/index.html",
+    "title": "Snapology",
     "section": "",
-    "text": "Just like the hyperboloid of one sheet, the Parabolic Hyperboloid is a ruled surface. This means that it can be imagined as the surface one gets by swiping a straight line through space. In the image below, we see that each of the skewers is exactly straight, but together thay make this beautiful curved shape.\n\nThis project is quite easy to make with skewers, see its instructions here.\nThe equation that defines the surface of the parabolic hyperboloid is\n\\[\nz = Ax^2 - By^2,\n\\]\nwhere both \\(A\\) and \\(B\\) are positive numbers. This website allows us to play with the parameters and see how the surface responds.\nIn my opinion, a static image can’t convey the beauty of this shape, so I made this gif: \nIn 2020, Dillon Berger noted on Twitter that the shape of Pringles is a parabolic hyperboloid:\n\n\nThe reason Pringles fit so nicely in a cylindrical tube is because they're hyperbolic paraboloids plotted over a circular domain pic.twitter.com/BUzjPw7e17\n\n— 〈 Berger | Dillon 〉 (@InertialObservr) February 18, 2020\n\n\nThe company took notice of this (mildly) viral tweet, and sent Dillon a box full of parabolic hyperboloids 😁.\n\n\nThanks @Pringles, for sending me some of these delicious Hyperbolic Paraboloids! pic.twitter.com/L3WMgqObPM\n\n— 〈 Berger | Dillon 〉 (@InertialObservr) March 2, 2020\n\n\nThe lesson here is that it’s good to know your math 😜."
+    "text": "This technique is quite easy to master, and gives you infinite options.\nRead these pages from Faye E. Goldman’s book, Geometric Origami.\nThere are lots of tutorials on youtube, look them up :)\nI found this tutorial useful:\nWhat I like most about Snapology is that you can construct many kinds of solids:"
   },
   {
-    "objectID": "posts/2025-06-14-phizz/index.html",
-    "href": "posts/2025-06-14-phizz/index.html",
-    "title": "PHiZZ",
+    "objectID": "posts/2025-09-17-snapology/index.html#platonic-solids",
+    "href": "posts/2025-09-17-snapology/index.html#platonic-solids",
+    "title": "Snapology",
+    "section": "Platonic solids",
+    "text": "Platonic solids\n\nAn icosahedron."
+  },
+  {
+    "objectID": "posts/2025-09-17-snapology/index.html#archimedean-solids",
+    "href": "posts/2025-09-17-snapology/index.html#archimedean-solids",
+    "title": "Snapology",
+    "section": "Archimedean solids",
+    "text": "Archimedean solids\n\nA snub dodecahedron.\n\nA rhombicosidodecahedron.\n\nA snub cube."
+  },
+  {
+    "objectID": "posts/2025-09-17-snapology/index.html#catalan-solids",
+    "href": "posts/2025-09-17-snapology/index.html#catalan-solids",
+    "title": "Snapology",
+    "section": "Catalan solids",
+    "text": "Catalan solids\nThese are the duals of the Archimedean solids.\n\nA rhombic triacontahedron."
+  },
+  {
+    "objectID": "posts/2021-10-28-pythagoras/index.html",
+    "href": "posts/2021-10-28-pythagoras/index.html",
+    "title": "Pythagorean theorem",
     "section": "",
-    "text": "The PHiZZ module is probably the easiest modular origami unit to fold, and it is also very versatile. PHiZZ stands for pentagon-hexagon zig-zag unit, because you can make a shape made of pentagons and hexagons.\nThe shape below is make of 12 pentagons. \nFrom the excellent origametry.net, we learn how to fold the PHiZZ unit.\n\nTo put the units together, follow this:\n\nIt is nice to build shapes out of 3 colors, which means that we can construct a Hamiltonian path through the shape, which is a path that visits each vertex exactly once. See the “football” below (12 pentagons, each surrounded by 5 hexagons). If you choose one color to ignore, you can think of the hamiltonian path as the one that is made of the other two colors.\n\nExtra links:\n\nNotes on Spherical Buckyballs – Part 1\nNotes on Spherical Buckyballs – Part 2\nLarge Phizz Buckyball"
+    "text": "I’ve been interested lately in the Pythagorean theorem, and the myriad of ways one can prove it.\n\nAn excellent resource is the website Cut The Knot.\nAnother great source is John C. Sparks’ The Pythagorean Theorem: Crown Jewel of Mathematics.\nFinally, I would recommend Eli Maor’s book, “The Pythagorean Theorem”.\n\n\n\n\n\nI used my tablet to write down my own version of some of the nicest proofs, see here."
+  },
+  {
+    "objectID": "posts/2021-11-08-tomoko-fuse/index.html",
+    "href": "posts/2021-11-08-tomoko-fuse/index.html",
+    "title": "Tomoko Fuse Unit Origami",
+    "section": "",
+    "text": "This structure has the general shape of a dodecahedron, with 12 beautiful pentagonal stars embeded in it. I found a while back a scan of the book Tomoko Fuse Unit Origami Fantasy. The book is all written in japanese, but I could make sense of the diagrams.\nTomoko Fuse is a master of modular origami, just google her name and you’ll find tons of fun projects.\nI used craft paper to give the structure a muted tones and a rustic feel. I think it turned out pretty good 😊."
   },
   {
     "objectID": "posts/2025-02-27-a4paper/index.html",
@@ -123,6 +158,6 @@
     "href": "index.html",
     "title": "A clean desk is the sign of a sick mind",
     "section": "",
-    "text": "A clean desk is the sign of a sick mind\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat and Small Stellated Dodecahedron\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\none piece, two shapes\n\n\n\n\n\nDec 21, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTriangle Edge Module\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nMake a surprisingly sturdy dodecahedron\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPHiZZ\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nFun ziz-zag modular origami unit\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nA4 paper\n\n\n\nprojects\n\nmath\n\n\n\nWhat’s the logic behind this paper?\n\n\n\n\n\nFeb 27, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nDoubling Time\n\n\n\nscience\n\n\n\nHere is an incredibly useful equation to calculate doubling times\n\n\n\n\n\nNov 16, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nParabolic Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nA pringles-shaped construction\n\n\n\n\n\nNov 13, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSkewer Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nThe crown you always wanted\n\n\n\n\n\nNov 12, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nGeorge Hart’s Card Constructions\n\n\n\nprojects\n\n\n\nBeware, it boggles the mind!\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTomoko Fuse Unit Origami\n\n\n\nprojects\n\n\n\nEndless fun\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe Sonobe Module\n\n\n\nprojects\n\n\n\nThe best way to start doing modular origami\n\n\n\n\n\nNov 3, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nHexastix\n\n\n\nprojects\n\n\n\nCrazy construction made of 72 pencils\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPythagorean theorem\n\n\n\nmath\n\n\n\nOne of the oldest theorems, always fresh :)\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe can problem\n\n\n\nquestion\n\n\n\n\n\n\n\n\n\nOct 27, 2021\n\n\nYair Mau\n\n\n\n\n\nNo matching items"
+    "text": "A clean desk is the sign of a sick mind\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreat and Small Stellated Dodecahedron\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\none piece, two shapes\n\n\n\n\n\nDec 21, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSnapology\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nmake anything from strips of paper\n\n\n\n\n\nSep 17, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nCelestial\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nthe rhombic hexecontahedron\n\n\n\n\n\nSep 17, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTriangle Edge Module\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nMake a surprisingly sturdy dodecahedron\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPHiZZ\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nFun ziz-zag modular origami unit\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nA4 paper\n\n\n\nprojects\n\nmath\n\n\n\nWhat’s the logic behind this paper?\n\n\n\n\n\nFeb 27, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nDoubling Time\n\n\n\nscience\n\n\n\nHere is an incredibly useful equation to calculate doubling times\n\n\n\n\n\nNov 16, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nParabolic Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nA pringles-shaped construction\n\n\n\n\n\nNov 13, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSkewer Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nThe crown you always wanted\n\n\n\n\n\nNov 12, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nGeorge Hart’s Card Constructions\n\n\n\nprojects\n\n\n\nBeware, it boggles the mind!\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTomoko Fuse Unit Origami\n\n\n\nprojects\n\n\n\nEndless fun\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe Sonobe Module\n\n\n\nprojects\n\n\n\nThe best way to start doing modular origami\n\n\n\n\n\nNov 3, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nHexastix\n\n\n\nprojects\n\n\n\nCrazy construction made of 72 pencils\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPythagorean theorem\n\n\n\nmath\n\n\n\nOne of the oldest theorems, always fresh :)\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe can problem\n\n\n\nquestion\n\n\n\n\n\n\n\n\n\nOct 27, 2021\n\n\nYair Mau\n\n\n\n\n\nNo matching items"
   }
 ]
