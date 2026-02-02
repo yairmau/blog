@@ -1,3 +1,8 @@
+---
+title: test
+draft: true
+---
+
 This comprehensive guide synthesizes our entire technical discussion, from the fundamental Legendre transformations to the non-ideal thermodynamics of the plant-atmosphere continuum.
 
 ---
