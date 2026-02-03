@@ -174,6 +174,9 @@ window.Quarto = {
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">motivation</a></li>
   <li><a href="#a-practical-example-that-doesnt-work" id="toc-a-practical-example-that-doesnt-work" class="nav-link" data-scroll-target="#a-practical-example-that-doesnt-work">a practical example that doesn’t work</a></li>
   <li><a href="#y-intercept-not-slope" id="toc-y-intercept-not-slope" class="nav-link" data-scroll-target="#y-intercept-not-slope">y-intercept, not slope</a></li>
+  <li><a href="#duality-relationship" id="toc-duality-relationship" class="nav-link" data-scroll-target="#duality-relationship">duality relationship</a></li>
+  <li><a href="#derivation-according-to-v.i.-arnold" id="toc-derivation-according-to-v.i.-arnold" class="nav-link" data-scroll-target="#derivation-according-to-v.i.-arnold">derivation according to V.I. Arnold</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">sources</a></li>
   </ul>
 </nav>
     </div>
@@ -220,19 +223,9 @@ window.Quarto = {
 </header>
 
 
-<p>Inspired by Dan Kosakowski’s youtube video, <a href="https://youtu.be/P2HZelQm7Lw?si=vBaUeWywBtDsBIZq" target="_blank">A Simple yet Powerful Math Trick</a>.<br>
-Folow his youtube channel, <a href="https://www.youtube.com/@AbideByReason" target="_blank">Abide by Reason</a>, it’s very good.</p>
-<p>useful sources:</p>
-<ul>
-<li><a href="https://web.physics.wustl.edu/alford/physics/Legendre_introduction.pdf" target="_blank">Legendre transforms by Mark Alford</a>, read caption of figure 2</li>
-<li><a href="https://www.aapt.org/docdirectory/meetingpresentations/sm14/mungan-poster.pdf" target="_blank">Legendre Transforms for Dummies, by Carl E. Mungan</a>. figure 1 is very good. The discussion in section “Inverse Legendre transform” is insightful, see especially Equation 14.</li>
-<li><a href="https://math.arizona.edu/~glickenstein/tex/legendre.pdf" target="_blank">The Legendre Transform, by David Glickenstein</a> involution</li>
-<li><a href="https://academicweb.nd.edu/~powers/ame.20231/zia.pdf" target="_blank">R. K. P. Zia, Edward F. Redish, and Susan R. McKay. Making sense of the legendre transform. American Journal of Physics, 2009</a></li>
-<li><a href="https://web.archive.org/web/20231223213826/https://www.physics.drexel.edu/~skennerly/maths/Legendre.pdf" target="_blank">A graphical derivation of the Legendre transform, by Sam Kennerly</a></li>
-</ul>
 <section id="motivation" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="motivation">motivation</h2>
-<p>It is hard to give good motivations for the Legendre transform without goint into the physics of thermodynamics or classical mechanics. I’ll do that in another post. I’ll try to give here a mathematical motivation, which is to say, let’s clearly state what is the problem we would like to solve.</p>
+<p>It is hard to give good motivations for the Legendre transform without going into the physics of thermodynamics or classical mechanics. I’ll do that in another post. I’ll try to give here a mathematical motivation, which is to say, let’s clearly state what is the problem we would like to solve.</p>
 <p>Suppose we have a function <span class="math inline">\(f(x)\)</span>. We can compute its derivative <span class="math inline">\(p = \frac{df}{dx}\)</span>. Can we express <strong>the same information</strong> contained in <span class="math inline">\(f(x)\)</span> through a new function <span class="math inline">\(g(p)\)</span>? What do I mean by “the same information”?</p>
 <p><strong>Involution</strong><br>
 Starting from <span class="math inline">\(f(x)\)</span>, we compute <span class="math inline">\(g(p)\)</span> with a given procedure (to be found below). Applying <strong>the same procedure</strong> to <span class="math inline">\(g(p)\)</span> gives us back <span class="math inline">\(f(x)\)</span>. <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(p)\)</span> are but the sides of the same coin. By flipping the coin twice, we get back to where we started. This is what involution means.</p>
@@ -256,7 +249,7 @@ Figure&nbsp;1: Comparison of Convex and Concave functions.
 The original function <span class="math inline">\(f(x)\)</span> <strong>has to be convex</strong> (or concave) for the Legendre transform to be defined. Convexity (concavity) means that the second derivative is positive (negative). A geometric way to understand convexity is that if we draw a line between any two points of the graph of <span class="math inline">\(f(x)\)</span>, the line lies always above (or below) the graph. If this requirement is not satisfied, the mapping between <span class="math inline">\(x\)</span> and <span class="math inline">\(p\)</span> is no longer one-to-one, meaning we can no longer uniquely reconstruct the original function <span class="math inline">\(f(x)\)</span> from <span class="math inline">\(g(p)\)</span>.</p>
 <p>The challenge, then, is to find a mathematical operation that satisfies all three criteria: it must be an involution, it must swap the variable with the derivative, and it must rely on the unique curvature of the function.</p>
 </section>
-<section id="a-practical-example-that-doesnt-work" class="level2">
+<section id="a-practical-example-that-doesnt-work" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="a-practical-example-that-doesnt-work">a practical example that doesn’t work</h2>
 <p>I’m following here Dan Kosakowski’s arguments, from his youtube video, <a href="https://youtu.be/P2HZelQm7Lw?si=vBaUeWywBtDsBIZq" target="_blank">A Simple yet Powerful Math Trick</a>.</p>
 <p>We start with a function <span class="math inline">\(f(x)\)</span>. For this practical example we’ll choose a parabola. In panel <strong>a</strong> below, we plot the function</p>
@@ -267,7 +260,7 @@ f(x) = x^2.
 <p><span class="math display">\[
 p = \frac{df}{dx}.
 \]</span></p>
-<p>Panel <strong>b</strong> shows that if we draw tangent lines to <span class="math inline">\(f(x)\)</span>, them make a nice envelope of the function itself, and that is a clue that maybe we can describe the function <span class="math inline">\(f\)</span> in terms of <span class="math inline">\(p\)</span> instead of <span class="math inline">\(x\)</span>.</p>
+<p>Panel <strong>b</strong> shows that if we draw tangent lines to <span class="math inline">\(f(x)\)</span>, they make a nice envelope of the function itself, and that is a clue that maybe we can describe the function <span class="math inline">\(f\)</span> in terms of <span class="math inline">\(p\)</span> instead of <span class="math inline">\(x\)</span>.</p>
 <div id="4c7d5af9" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>import libraries</summary>
@@ -392,6 +385,21 @@ p(x) = 2x,
 <p><span class="math display">\[
 x(p) = \frac{p}{2}
 \]</span></p>
+<div id="cell-fig-nonconvex" class="cell page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display">
+<div id="fig-nonconvex" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nonconvex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-nonconvex-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nonconvex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A non-convex function can have multiple points with the same slope.
+</figcaption>
+</figure>
+</div>
+</div></div></div>
+<p>This is where the requirement that <span class="math inline">\(f(x)\)</span> is convex comes to play. If it were not convex, there could be multiple values of <span class="math inline">\(x\)</span> for the same value of <span class="math inline">\(p\)</span>, and we would not be able to invert the relation.</p>
 <p>We need now a function <span class="math inline">\(g(p)\)</span>. A first guess of what <span class="math inline">\(g(p)\)</span> could be is:</p>
 <p><span class="math display">\[
 g(p) = f(x(p)) = \left(\frac{p}{2}\right)^2 = \frac{p^2}{4}.
@@ -493,7 +501,7 @@ g_2(p) &amp;= f_2(x(p)) \\
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -512,10 +520,12 @@ f_2(x) = g_2(p(x)) = g_2(2x) = \left(\frac{2x}{2}\right)^2 = x^2,
 </section>
 <section id="y-intercept-not-slope" class="level2">
 <h2 class="anchored" data-anchor-id="y-intercept-not-slope">y-intercept, not slope</h2>
-<p>We learned that using the slope <span class="math inline">\(p = df/dx\)</span> to define a new function <span class="math inline">\(g(p)=f(x(p))\)</span> does not work. Instead, let’s try using the y-intercept of the tangent line as our function <span class="math inline">\(-g(p)\)</span>. The negative sign here will be justified later. The general equation for the tangent line is</p>
+<p>We learned that defining the function <span class="math inline">\(g(p)=f(x(p))\)</span> does not work. Instead, let’s define <span class="math inline">\(g(p)\)</span> as the negative-y-intercept of the tangent line. The negative sign here will be justified later.</p>
+<p>How to find <span class="math inline">\(g(p)\)</span>? We start with the equation for the tangent line of <span class="math inline">\(f(x)\)</span>:</p>
 <p><span class="math display">\[
-y = mx - g.
+y = px - g.
 \]</span></p>
+<p>How do I know this? This is simply the equation of a line, <span class="math inline">\(y = mx + b\)</span>, where the slope is <span class="math inline">\(m=p\)</span> and the y-intercept is <span class="math inline">\(b=-g\)</span>.</p>
 <div id="c77e0a79" class="cell" data-execution_count="27">
 <details class="code-fold">
 <summary>plot</summary>
@@ -552,15 +562,11 @@ y = mx - g.
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The slope <span class="math inline">\(m\)</span> was already defined as <span class="math inline">\(p = f'(x)\)</span>, so we have</p>
-<p><span class="math display">\[
-y = px - g.
-\]</span></p>
 <p>The tangent line evaluated at <span class="math inline">\(x_0\)</span> touches the function at <span class="math inline">\(f(x_0)\)</span>, so we can use that to find <span class="math inline">\(g\)</span>:</p>
 <p><span class="math display">\[\begin{align*}
 f(x_0) &amp;= px_0 - g \\
@@ -572,6 +578,7 @@ g &amp;= px_0 - f(x_0).
 g(p) = p\cdot x - f(x).
 \]</span></p>
 </div>
+<p>This is important, so I put it in a red box. See that I wrote <span class="math inline">\(g\)</span> as a function of <span class="math inline">\(p\)</span>. Every point <span class="math inline">\(x\)</span> of the function <span class="math inline">\(f(x)\)</span> has a unique slope <span class="math inline">\(p = df/dx\)</span>, and for each slope there is a unique tangent line with a unique y-intercept <span class="math inline">\(-g\)</span>. Because of this “uniqueness-daisy-chaining”, we can choose to think of <span class="math inline">\(g\)</span> as a function of <span class="math inline">\(p\)</span>.</p>
 <p>Let’s use the formula above to compute <span class="math inline">\(g(p)\)</span> for our shifted parabola <span class="math inline">\(f(x) = (x-a)^2\)</span>.</p>
 <p><span class="math display">\[\begin{align*}
 p &amp;= \frac{df}{dx} \\
@@ -596,14 +603,14 @@ x &amp;= \frac{dg}{dp} \\
 &amp;= \frac{p}{2} + a,
 \end{align*}\]</span></p>
 <p>Solving for <span class="math inline">\(p\)</span> gives <span class="math inline">\(p = 2(x - a)\)</span>.</p>
-<p>And now: <span class="math display">\[\begin{align*}
+<p>And now, using the result in the red box above, and solving for <span class="math inline">\(f(x)\)</span>: <span class="math display">\[\begin{align*}
 f(x) &amp;= p\cdot x - g(p(x)) \\
 &amp;= 2(x - a) \cdot x - \left(\frac{(2(x - a))^2}{4} + 2(x - a)a\right) \\
 &amp;= 2(x - a) \cdot x - \left((x - a)^2 + 2a(x - a)\right) \\
 &amp;= 2(x - a) \cdot x - (x - a)^2 - 2a(x - a) \\
 &amp;= (x - a)^2.
 \end{align*}\]</span></p>
-<p>Success! As a prize, go play with the widget below.</p>
+<p>Success! This procedure keeps all the information as we do the Legendre transformation forward and then backward. As a prize, go play with the widget below.</p>
 <div id="interactive-container" style="display: flex; flex-direction: column; align-items: center;">
 <div class="cell">
 <details class="code-fold hidden">
@@ -636,87 +643,95 @@ f(x) &amp;= p\cdot x - g(p(x)) \\
 </div>
 <details class="code-fold hidden">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="15" data-source-offset="-414"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 14;"><span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x0</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> u <span class="op">*</span> x0 <span class="op">-</span> (x0 <span class="op">**</span> <span class="dv">2</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Define the plot</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span> </span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">14</span> }<span class="op">,</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"x →"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">45</span> }<span class="op">,</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">8</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"↑ y"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">50</span> }<span class="op">,</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisX</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisY</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Parabola</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Blue line</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="op">-</span>g<span class="op">,</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="dv">3</span><span class="op">*</span>u <span class="op">-</span> g<span class="op">,</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> blue_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Red vertical segment</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="op">-</span>g<span class="op">,</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>    <span class="co">// black dashed vertical segment</span></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> x0<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> x0<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> x0 <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4 4"</span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> x0<span class="op">,</span> </span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> x0 <span class="op">**</span> <span class="dv">2</span><span class="op">,</span> </span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span>            <span class="co">// Radius of the dot</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> red_color<span class="op">,</span>   <span class="co">// Color of the dot</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="co">// Optional: adds an outline to make it pop</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>]<span class="op">,</span> {</span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#aaa"</span><span class="op">,</span>    <span class="co">// A light gray color</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>    <span class="co">// Makes it "thin"</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span> <span class="co">// Makes it subtle</span></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TEXT LABELS</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="fl">2.7</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> </span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span> </span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span>g<span class="op">/</span><span class="dv">2</span><span class="op">,</span> </span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"g(x₀)"</span>]<span class="op">,</span> </span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> red_color<span class="op">,</span> </span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> x0<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> </span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"x₀"</span>]<span class="op">,</span> </span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> </span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="15" data-source-offset="-414"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 14;"><span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x0</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> p1 <span class="op">*</span> x0 <span class="op">-</span> (x0 <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>angle_degrees <span class="op">=</span> <span class="op">-</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">atan</span>(p1<span class="op">*</span>(<span class="dv">3</span><span class="op">/</span><span class="dv">16</span>)<span class="op">*</span>(<span class="dv">400</span><span class="op">/</span><span class="dv">600</span>)) <span class="op">*</span> (<span class="dv">180</span> <span class="op">/</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Define the plot</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">14</span> }<span class="op">,</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"x →"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">45</span> }<span class="op">,</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">8</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"↑ y"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">50</span> }<span class="op">,</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisX</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisY</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Parabola</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Blue line</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="op">-</span>g<span class="op">,</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="dv">3</span><span class="op">*</span>p1 <span class="op">-</span> g<span class="op">,</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> blue_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Red vertical segment</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="op">-</span>g<span class="op">,</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>    <span class="co">// black dashed vertical segment</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> x0<span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> x0<span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> x0 <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4 4"</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> x0<span class="op">,</span> </span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> x0 <span class="op">**</span> <span class="dv">2</span><span class="op">,</span> </span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span>            <span class="co">// Radius of the dot</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> red_color<span class="op">,</span>   <span class="co">// Color of the dot</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="co">// Optional: adds an outline to make it pop</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>]<span class="op">,</span> {</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#aaa"</span><span class="op">,</span>    <span class="co">// A light gray color</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>    <span class="co">// Makes it "thin"</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span> <span class="co">// Makes it subtle</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TEXT LABELS</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="fl">2.7</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> </span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span> </span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="op">-</span>g<span class="op">/</span><span class="dv">2</span><span class="op">,</span> </span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"g"</span>]<span class="op">,</span> </span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> red_color<span class="op">,</span> </span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> x0<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"x₀"</span>]<span class="op">,</span> </span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> </span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span><span class="op">*</span>p1 <span class="op">-</span> g <span class="op">-</span><span class="fl">0.5</span><span class="op">,</span> </span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"tangent line y = px - g"</span>]<span class="op">,</span> </span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> blue_color<span class="op">,</span> <span class="dt">rotate</span><span class="op">:</span> angle_degrees</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -734,20 +749,43 @@ f(x) &amp;= p\cdot x - g(p(x)) \\
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-5" data-nodetype="expression">
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="expression">
 
 </div>
 </div>
 </div>
 </div>
-<section id="duality-relationship" class="level2">
+</div>
+</section>
+<section id="duality-relationship" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="duality-relationship">duality relationship</h2>
+<div id="cell-fig-envelope" class="cell page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output cell-output-display">
+<div id="fig-envelope" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-envelope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-envelope-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-envelope-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: the envelope of tangent lines to a convex function.
+</figcaption>
+</figure>
+</div>
+</div></div></div>
 <p>The Legendre transformation takes advantage of the fact that we can represent a function in two ways. The first is the usual way, <span class="math inline">\(y=f(x)\)</span>, where the function is defined by the set of points <span class="math inline">\((x, f(x))\)</span>. The second is through the family of tangent lines to the function, where the function is defined by the set of tangent slopes <span class="math inline">\(p\)</span> and their negative-y-intercept <span class="math inline">\(g(p)\)</span>.</p>
-<p>If we hadn’t defined <span class="math inline">\(g(p)\)</span> as the negative y-intercept, the formula for the Legendre transform would be:</p>
+<p>If we had defined <span class="math inline">\(g(p)\)</span> as the y-intercept (and not the negative y-intercept), the formula for the Legendre transform would be:</p>
 <p><span class="math display">\[
 g(p) = f(x) - p\cdot x.
 \]</span></p>
-<p>There is nothing wrong with that. Actually, that’s exactly the way it is defined in the context of Thermodynamics. This choice has the effect that if the function <span class="math inline">\(f\)</span> is convex, then <span class="math inline">\(g\)</span> will be concave. In classical mechanics, however, the relationship between the Lagrangian and Hamiltonian formulations uses the negative y-intercept definition, where convex functions map to convex functions.</p>
+<p>There is nothing illegal about that. Actually, that’s exactly the way it is defined in the context of Thermodynamics. This choice has the effect that if the function <span class="math inline">\(f\)</span> is convex, then <span class="math inline">\(g\)</span> will be concave. In classical mechanics, however, the relationship between the Lagrangian and Hamiltonian formulations uses the negative y-intercept definition, where convex functions map to convex functions.</p>
 <div id="2152d323" class="cell" data-execution_count="108">
 <details class="code-fold">
 <summary>Show the code</summary>
@@ -799,16 +837,18 @@ g(p) = f(x) - p\cdot x.
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The figure above summarizes all the procedures of the Legendre transformation in both conventions. See how the top convention is totally symmetric: if you replace <span class="math inline">\(f\)</span> and <span class="math inline">\(x\)</span> for <span class="math inline">\(g\)</span> and <span class="math inline">\(p\)</span>, the equations remain the same. The bottom convention has two horrendous minus signs that break the symmetry. I really find it ugly and non intuitive. From now on let’s keep using the top convention.</p>
 <p>The best way to remember the Legendre transformation is this:</p>
+<div class="alert alert-info">
 <p><span class="math display">\[
 f(x) + g(p) = p \cdot x.
 \]</span></p>
+</div>
 <p>As it is written, we can’t still interpret it. If we want the “forward” Legendre transform, we solve for <span class="math inline">\(g\)</span> and get <span class="math inline">\(g(p)=p\cdot x - f(x)\)</span>, while for the “inverse” Legendre transform we solve for <span class="math inline">\(f\)</span> and get <span class="math inline">\(f(x)=p\cdot x - g(p)\)</span>. As for the variables, there is not much to remember, each variable is defined as the derivative of the other function with respect to its variable: <span class="math inline">\(p=f'(x)\)</span> and <span class="math inline">\(x=g'(p)\)</span>. Just simple and beautiful.</p>
 <p>The equation above will the basis of a wonderful geometric intepretation of the Legendre transformation, which we shall see next.</p>
 <div id="fc83d7c2" class="cell" data-execution_count="8">
@@ -862,7 +902,7 @@ f(x) + g(p) = p \cdot x.
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -891,19 +931,18 @@ The <em>Legendre transformation</em> of the function <span class="math inline">\
 <summary>Show the code</summary>
 <div class="sourceCode cell-code hidden" id="cb10" data-startfrom="2" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>blue_color <span class="op">=</span> <span class="st">"#0343df"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>red_color <span class="op">=</span> <span class="st">"#e50000"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>light_blue_color <span class="op">=</span> <span class="st">"#95d0fc"</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">// 1. Define the slider without a label to keep it tight</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>]<span class="op">,</span> {</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Create a centered row using a template literal</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">// This puts "Slope p" right next to the number box</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div style="display: flex; align-items: center; gap: 10px; font-weight: bold; font-family: sans-serif; margin-bottom: 15px;"&gt;</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span&gt;Slope p&lt;/span&gt; </span><span class="sc">${</span>viewof p<span class="sc">}</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">// 1. Define the slider without a label to keep it tight</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>viewof p <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">4</span>]<span class="op">,</span> {</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Create a centered row using a template literal</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">// This puts "Slope p" right next to the number box</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div style="display: flex; align-items: center; gap: 10px; font-weight: bold; font-family: sans-serif; margin-bottom: 15px;"&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span&gt;Slope p&lt;/span&gt; </span><span class="sc">${</span>viewof p<span class="sc">}</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -928,122 +967,116 @@ The <em>Legendre transformation</em> of the function <span class="math inline">\
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-5" data-nodetype="expression">
+<div id="ojs-cell-2-4" data-nodetype="expression">
 
 </div>
 </div>
 </div>
 <details class="code-fold hidden">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="18" data-source-offset="-491"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 17;"><span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>xo <span class="op">=</span> p <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Define the plot</span></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span> </span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">14</span> }<span class="op">,</span></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"x →"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">45</span> }<span class="op">,</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"↑ y"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">50</span> }<span class="op">,</span></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisX</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisY</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Parabola</span></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Blue line</span></span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> p <span class="op">*</span> d<span class="op">,</span></span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> blue_color<span class="op">,</span></span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>    <span class="co">// LIGHT Blue line</span></span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="op">-</span>p <span class="op">*</span> p <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> p<span class="op">*</span><span class="dv">3</span> <span class="op">-</span>p <span class="op">*</span> p <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> light_blue_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Red vertical segment</span></span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The gray thick straight line (Vertical segment)</span></span>
-<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"gray"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>]<span class="op">,</span> {</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#aaa"</span><span class="op">,</span>    <span class="co">// A light gray color</span></span>
-<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>    <span class="co">// Makes it "thin"</span></span>
-<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span> <span class="co">// Makes it subtle</span></span>
-<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TEXT LABELS</span></span>
-<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="fl">2.7</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> </span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
-<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span> </span>
-<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span> <span class="op">*</span> p<span class="op">,</span> </span>
-<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"px"</span>]<span class="op">,</span> </span>
-<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> blue_color<span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span> </span>
-<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">*</span> <span class="dv">3</span> <span class="op">/</span> <span class="dv">8</span><span class="op">,</span> </span>
-<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"g(p)"</span>]<span class="op">,</span> </span>
-<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">20</span> </span>
-<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">*</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">8</span><span class="op">,</span> </span>
-<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
-<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">20</span> </span>
-<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
-<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> </span>
-<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"x(p)"</span>]<span class="op">,</span> </span>
-<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> </span>
-<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="17" data-source-offset="-462"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 16;"><span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>xo <span class="op">=</span> p <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Define the plot</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span> </span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">14</span> }<span class="op">,</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"x →"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">45</span> }<span class="op">,</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">4</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"↑ y"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">50</span> }<span class="op">,</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisX</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisY</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Parabola</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Blue line</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> p <span class="op">*</span> d<span class="op">,</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> blue_color<span class="op">,</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>    <span class="co">// LIGHT Blue line</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="op">-</span>p <span class="op">*</span> p <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> p<span class="op">*</span><span class="dv">3</span> <span class="op">-</span>p <span class="op">*</span> p <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#ddd"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Red vertical segment</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>    <span class="co">// The gray thick straight line (Vertical segment)</span></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> <span class="dv">4</span><span class="op">,</span></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"gray"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>]<span class="op">,</span> {</span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#aaa"</span><span class="op">,</span>    <span class="co">// A light gray color</span></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>    <span class="co">// Makes it "thin"</span></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span> <span class="co">// Makes it subtle</span></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TEXT LABELS</span></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="fl">2.7</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> </span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span> </span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span> <span class="op">*</span> p<span class="op">,</span> </span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"px"</span>]<span class="op">,</span> </span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> blue_color<span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span> </span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">*</span> <span class="dv">3</span> <span class="op">/</span> <span class="dv">8</span><span class="op">,</span> </span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"g(p)"</span>]<span class="op">,</span> </span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">20</span> </span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> (p <span class="op">**</span> <span class="dv">2</span>) <span class="op">*</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">8</span><span class="op">,</span> </span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">15</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">20</span> </span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> p <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"x(p)"</span>]<span class="op">,</span> </span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">16</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> </span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-6" data-nodetype="declaration">
+<div id="ojs-cell-2-5" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-2-7" data-nodetype="expression">
+<div id="ojs-cell-2-6" data-nodetype="expression">
 
+</div>
 </div>
 </div>
 </div>
@@ -1054,7 +1087,12 @@ The <em>Legendre transformation</em> of the function <span class="math inline">\
 p &amp;= f'(x).
 \end{align*}\]</span></p>
 <p>Only at this stage in the argument we find that <span class="math inline">\(p\)</span> is the derivative of <span class="math inline">\(f\)</span> at the point <span class="math inline">\(x(p)\)</span>! I added a light blue line to connect this argument with the previous widget. The light blue line is <span class="math inline">\(px\)</span> shifted down by <span class="math inline">\(g(p)\)</span>, so its y-intercept is exactly <span class="math inline">\(-g(p)\)</span>.</p>
-<p>One more thing. If we sum the vertical height given by <span class="math inline">\(f(x)\)</span> (gray) and the vertical height given by <span class="math inline">\(g(p)\)</span> (red), we get exactly the vertical height of the blue line <span class="math inline">\(px\)</span>, that is, the symmetric equation from before:</p>
+<p>Because of this maximization procedure, sometimes we see the Legendre transformation define as:</p>
+<p><span class="math display">\[
+g(p) = \max_x (px - f(x)).
+\]</span></p>
+<p>The argument inside the parenthesis is <span class="math inline">\(F(p,x)\)</span>, and it can be thought of as a function of two variables, <span class="math inline">\(p\)</span> and <span class="math inline">\(x\)</span>. For each fixed <span class="math inline">\(p\)</span>, we look for the value of <span class="math inline">\(x\)</span> that maximizes <span class="math inline">\(F(p,x)\)</span>, and that value is <span class="math inline">\(x(p)\)</span>. Substituting back into <span class="math inline">\(F\)</span> gives us <span class="math inline">\(g(p)\)</span>.</p>
+<p>One more thing. If we sum the vertical height given by <span class="math inline">\(f(x)\)</span> (gray) and the vertical height given by <span class="math inline">\(g(p)\)</span> (red), we get exactly the vertical height of the blue line <span class="math inline">\(px\)</span>, that is, the symmetric equation in the blue box from before:</p>
 <p><span class="math display">\[
 f(x) + g(p) = p \cdot x.
 \]</span></p>
@@ -1067,24 +1105,177 @@ Let us consider a function <span class="math inline">\(f\)</span> which is diffe
 <blockquote class="blockquote">
 <p><strong>Theorem.</strong> The Legendre transformation is involutive, i.e., its square is the identity: if under the Legendre transformation <span class="math inline">\(f\)</span> is taken to <span class="math inline">\(g\)</span>, then the Legendre transform of <span class="math inline">\(g\)</span> will again be <span class="math inline">\(f\)</span>.</p>
 </blockquote>
-<p>I don’t love Arnold’s prose, but this is great.</p>
+<p>I usually don’t love Arnold’s prose, but this is great.</p>
+<p>Now Arnold will justify why the Legendre transformation of <span class="math inline">\(g(p)\)</span> gives us back <span class="math inline">\(f(x)\)</span>.</p>
 <blockquote class="blockquote">
 <p><strong>Proof.</strong> In order to apply the Legendre transform to <span class="math inline">\(g\)</span>, with variable <span class="math inline">\(p\)</span>, we must by definition look at a new independent variable (which we will call <span class="math inline">\(x\)</span>), construct the function <span class="math display">\[
 G(x, p) = xp - g(p),
 \]</span> and find the point <span class="math inline">\(p(x)\)</span> at which <span class="math inline">\(G\)</span> attains its maximum: <span class="math inline">\(\partial G/\partial p = 0\)</span>, i.e., <span class="math inline">\(g'(p) = x\)</span>. Then the Legendre transform of <span class="math inline">\(g(p)\)</span> will be the function of <span class="math inline">\(x\)</span> equal to <span class="math inline">\(G(x, p(x))\)</span>.</p>
-<p>We will show that <span class="math inline">\(G(x, p(x)) = f(x)\)</span>. To this end we notice that <span class="math inline">\(G(x, p) = xp - q(p)\)</span> has a simple geometric interpretation: it is the ordinate of the point with abscissa <span class="math inline">\(x\)</span> on the line tangent to the graph of <span class="math inline">\(f(x)\)</span> with slope <span class="math inline">\(p\)</span> (Figure 45). For fixed <span class="math inline">\(p\)</span>, the function <span class="math inline">\(G(x, p)\)</span> is a linear function of <span class="math inline">\(x\)</span>, with <span class="math inline">\(\partial G/\partial x = p\)</span>, and for <span class="math inline">\(x = x(p)\)</span> we have <span class="math inline">\(G(x, p) = xp - g(p) = f(x)\)</span> by the definition of <span class="math inline">\(g(p)\)</span>.</p>
-<p>Let us now fix <span class="math inline">\(x = x_0\)</span> and vary <span class="math inline">\(p\)</span>. Then the values of <span class="math inline">\(G(x,p)\)</span> will be the ordinates of the points of intersection of the line <span class="math inline">\(x=x_0\)</span> with the line tangen to the graph of <span class="math inline">\(f(x)\)</span> with various slopes <span class="math inline">\(p\)</span>. By the convexity of the graph it follows that all these tangents lie below the curve, and therefore the maximum of <span class="math inline">\(G(x,p)\)</span> for a fixed <span class="math inline">\(x(p_0)\)</span> is equal to <span class="math inline">\(f(x)\)</span> (and is achieed for <span class="math inline">\(p=p(x_0)=f'(x_0)\)</span>).</p>
 </blockquote>
-
+<p>Arnold is using <strong>the same argument</strong> as before, this is exactly the same procedure he defined for getting <span class="math inline">\(g(p)\)</span> from <span class="math inline">\(f(x)\)</span>. The only difference is that now we start from <span class="math inline">\(g(p)\)</span> and want to get back to <span class="math inline">\(f(x)\)</span>, so we swap the roles of <span class="math inline">\(x\rightleftarrows p\)</span> and of <span class="math inline">\(f\rightleftarrows g\)</span>. He calls this new function <span class="math inline">\(G(x,p)\)</span> instead of <span class="math inline">\(F(p,x)\)</span>, but it is the same idea. Again, requiring that <span class="math inline">\(G(x,p)\)</span> is maximized with respect to <span class="math inline">\(p\)</span> means taking the derivative and setting it to zero, so naturally we get that the original variable <span class="math inline">\(x=g'(p)\)</span>. Taking the value of <span class="math inline">\(p\)</span> that maximizes <span class="math inline">\(G(x,p)\)</span> and substituting back gives us the Legendre transform of <span class="math inline">\(g(p)\)</span>. All this is algebra, now comes the geometric interpretation.</p>
+<blockquote class="blockquote">
+<p>We will show that <span class="math inline">\(G(x, p(x)) = f(x)\)</span>. To this end we notice that <span class="math inline">\(G(x, p) = xp - g(p)\)</span> has a simple geometric interpretation: it is the ordinate of the point with abscissa <span class="math inline">\(x\)</span> on the line tangent to the graph of <span class="math inline">\(f(x)\)</span> with slope <span class="math inline">\(p\)</span> (Figure 45). For fixed <span class="math inline">\(p\)</span>, the function <span class="math inline">\(G(x, p)\)</span> is a linear function of <span class="math inline">\(x\)</span>, with <span class="math inline">\(\partial G/\partial x = p\)</span>, and for <span class="math inline">\(x = x(p)\)</span> we have <span class="math inline">\(G(x, p) = xp - g(p) = f(x)\)</span> by the definition of <span class="math inline">\(g(p)\)</span>.</p>
+</blockquote>
+<p><img src="arnold45.png" class="img-fluid" width="400"></p>
+<p>Wow. That’s <strong>incomprehensible</strong>. Let me try to explain it in my own words. Remember when we found the formula for the tangent line to the function <span class="math inline">\(f(x)\)</span>? See it <a href="#y-intercept-not-slope">here</a>. The formula was</p>
+<p><span class="math display">\[
+y = px - g.
+\]</span></p>
+<p>Arnold is saying: “Hey! Look! The function <span class="math inline">\(G(x,p)\)</span> is exactly the same as the right-hand side of the equation above, that is, this second application of the Legendre transformation gave us the equation of the tangent line to <span class="math inline">\(f(x)\)</span> with slope <span class="math inline">\(p\)</span>!” More that that: <span class="math inline">\(G(x,p)\)</span> is not just one tangent line, it is the <strong>family of all tangent lines</strong> to <span class="math inline">\(f(x)\)</span>, one for each value of <span class="math inline">\(p\)</span>. That’s what he drew in Figure 45.</p>
+<blockquote class="blockquote">
+<p>Let us now fix <span class="math inline">\(x = x_0\)</span> and vary <span class="math inline">\(p\)</span>. Then the values of <span class="math inline">\(G(x,p)\)</span> will be the ordinates of the points of intersection of the line <span class="math inline">\(x=x_0\)</span> with the line tangent to the graph of <span class="math inline">\(f(x)\)</span> with various slopes <span class="math inline">\(p\)</span>. By the convexity of the graph it follows that all these tangents lie below the curve, and therefore the maximum of <span class="math inline">\(G(x,p)\)</span> for a fixed <span class="math inline">\(x(p_0)\)</span> is equal to <span class="math inline">\(f(x)\)</span> (and is achieved for <span class="math inline">\(p=p(x_0)=f'(x_0)\)</span>).</p>
+</blockquote>
+<p>Once more, it is very hard to understand Arnold’s text. If an image is worth a thousand words, an interactive widget is our only hope of deciphering Arnold’s proof. Play with it a little bit and then read the explanation below.</p>
+<div id="interactive-container" style="display: flex; flex-direction: column; align-items: center;">
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="3" data-source-offset="-58"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>viewof p2 <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">7</span>]<span class="op">,</span> {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">250</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">// 2. Create a centered row using a template literal</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">// This puts "Slope p" right next to the number box</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div style="display: flex; align-items: center; gap: 10px; font-weight: bold; font-family: sans-serif; margin-bottom: 15px;"&gt;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;span&gt;Slope p&lt;/span&gt; </span><span class="sc">${</span>viewof p2<span class="sc">}</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
 
 </div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="14" data-source-offset="-418"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 13;"><span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>x_naught <span class="op">=</span> p2 <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>gee <span class="op">=</span> p2 <span class="op">*</span> x_naught <span class="op">-</span> (x_naught <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">// 3. Define the plot</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">600</span><span class="op">,</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> { <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">14</span> }<span class="op">,</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"x →"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">45</span> }<span class="op">,</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">8</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"↑ y"</span><span class="op">,</span> <span class="dt">labelOffset</span><span class="op">:</span> <span class="dv">50</span> }<span class="op">,</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisX</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">axisY</span>({<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span>})<span class="op">,</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Parabola</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(d3<span class="op">.</span><span class="fu">range</span>(<span class="dv">0</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">,</span> {</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">4</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Blue line</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="op">-</span>gee<span class="op">,</span></span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="dv">3</span><span class="op">*</span>p2 <span class="op">-</span> gee<span class="op">,</span></span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> blue_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Red vertical segment</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> p2<span class="op">*</span><span class="dv">2</span> <span class="op">-</span> gee<span class="op">,</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> red_color<span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">5</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>    <span class="co">// black dashed vertical segment</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y2</span><span class="op">:</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4 4"</span></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>]<span class="op">,</span> {</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#aaa"</span><span class="op">,</span>    <span class="co">// A light gray color</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span>    <span class="co">// Makes it "thin"</span></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeOpacity</span><span class="op">:</span> <span class="fl">0.5</span> <span class="co">// Makes it subtle</span></span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>    <span class="co">// TEXT LABELS</span></span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="fl">2.7</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> </span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"f(x)"</span>]<span class="op">,</span> </span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">10</span> </span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>([<span class="kw">null</span>]<span class="op">,</span> {</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> [<span class="st">"x₀"</span>]<span class="op">,</span> </span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">fontWeight</span><span class="op">:</span> <span class="st">"bold"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span> </span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The widget above allows us to see the maximization process in action. We draw a vertical dashed line at a fixed value of <span class="math inline">\(x_0\)</span>. We then control the slope <span class="math inline">\(p\)</span> of the tangent line with a slider. For a given value of <span class="math inline">\(p\)</span>, the quantity <span class="math inline">\(G(x,p)\)</span> describes a specific straight line, shown in blue. Since we fixed <span class="math inline">\(x_0\)</span>, the value of this tangent line at <span class="math inline">\(x_0\)</span> is exactly the height of the intersection point between the blue line and the dashed vertical line, shown in red. We now vary <span class="math inline">\(p\)</span> with the slider, and see how the height of the intersection point changes. In this maximization procedure, our job is to find the value of <span class="math inline">\(p\)</span> that maximizes this red line segment. Because the function <span class="math inline">\(f(x)\)</span> is convex, the tangent lines always lie below the curve, so the maximum height of this red line segment is exactly <span class="math inline">\(f(x_0)\)</span>, and it is achieved when the tangent line touches the curve at <span class="math inline">\(x_0\)</span>, that is, when <span class="math inline">\(p=f'(x_0)\)</span>.</p>
+<p>We can do that for every value of <span class="math inline">\(x\)</span>, and thus prove that</p>
+<p><span class="math display">\[
+f(x) = \max_p (px - g(p)).
+\]</span></p>
+<p>This completes Arnold’s proof of the involutivity of the Legendre transformation.</p>
 </section>
-</div>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">sources</h2>
+<p>This post was inspired by Dan Kosakowski’s youtube video, <a href="https://youtu.be/P2HZelQm7Lw?si=vBaUeWywBtDsBIZq" target="_blank">A Simple yet Powerful Math Trick</a>. It blew my mind. After that I had no other option but doing a deep dive into the Legendre transformation. Follow his youtube channel, <a href="https://www.youtube.com/@AbideByReason" target="_blank">Abide by Reason</a>, it’s very good.</p>
+<p>In studying the Legendre transformation I found the following resources helpful:</p>
+<ul>
+<li><a href="https://web.physics.wustl.edu/alford/physics/Legendre_introduction.pdf" target="_blank">Legendre transforms by Mark Alford</a>.</li>
+<li><a href="https://www.aapt.org/docdirectory/meetingpresentations/sm14/mungan-poster.pdf" target="_blank">Legendre Transforms for Dummies, by Carl E. Mungan</a>.</li>
+<li><a href="https://math.arizona.edu/~glickenstein/tex/legendre.pdf" target="_blank">The Legendre Transform, by David Glickenstein</a>.</li>
+<li><a href="https://academicweb.nd.edu/~powers/ame.20231/zia.pdf" target="_blank">R. K. P. Zia, Edward F. Redish, and Susan R. McKay. Making sense of the legendre transform. American Journal of Physics, 2009</a></li>
+<li><a href="https://web.archive.org/web/20231223213826/https://www.physics.drexel.edu/~skennerly/maths/Legendre.pdf" target="_blank">A graphical derivation of the Legendre transform, by Sam Kennerly</a>.</li>
+<li><a href="https://www.ceremade.dauphine.fr/~fejoz/Enseignement/ds2021/Arnold_1989_MMCM.pdf" target="_blank">Mathematical Methods of Classical Mechanics, by V.I. Arnold</a>, 2nd edition, pages 61 to 64.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gMS4gRGVmaW5lIHRoZSBzbGlkZXIgd2l0aG91dCBhIGxhYmVsIHRvIGtlZXAgaXQgdGlnaHRcbnZpZXdvZiB4MCA9IElucHV0cy5yYW5nZShbMCwgM10sIHtcbiAgc3RlcDogMC4xLCBcbiAgdmFsdWU6IDIuNSxcbiAgd2lkdGg6IDI1MFxufSlcblxuLy8gMi4gQ3JlYXRlIGEgY2VudGVyZWQgcm93IHVzaW5nIGEgdGVtcGxhdGUgbGl0ZXJhbFxuLy8gVGhpcyBwdXRzIFwiU2xvcGUgcFwiIHJpZ2h0IG5leHQgdG8gdGhlIG51bWJlciBib3hcbmh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogMTBweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBtYXJnaW4tYm90dG9tOiAxNXB4O1wiPlxuICA8c3Bhbj544oKAPC9zcGFuPiAke3ZpZXdvZiB4MH1cbjwvZGl2PmBcblxudSA9IDIgKiB4MFxuZyA9IHUgKiB4MCAtICh4MCAqKiAyKVxuXG4vLyAzLiBEZWZpbmUgdGhlIHBsb3RcblBsb3QucGxvdCh7XG4gIGdyaWQ6IHRydWUsXG4gIG1hcmdpbkxlZnQ6IDYwLFxuICBtYXJnaW5Cb3R0b206IDYwLFxuICB3aWR0aDogNjAwLCBcbiAgc3R5bGU6IHsgZm9udFNpemU6IDE0IH0sXG4gIHg6IHsgZG9tYWluOiBbMCwgM10sIGxhYmVsOiBcIngg4oaSXCIsIGxhYmVsT2Zmc2V0OiA0NSB9LFxuICB5OiB7IGRvbWFpbjogWy04LCA4XSwgbGFiZWw6IFwi4oaRIHlcIiwgbGFiZWxPZmZzZXQ6IDUwIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5heGlzWCh7Zm9udFNpemU6IDIwLCBmb250V2VpZ2h0OiBcImJvbGRcIn0pLFxuICAgIFBsb3QuYXhpc1koe2ZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCJ9KSxcblxuICAgIC8vIFBhcmFib2xhXG4gICAgUGxvdC5saW5lKGQzLnJhbmdlKDAsIDMuMSwgMC4xKSwge1xuICAgICAgeDogZCA9PiBkLFxuICAgICAgeTogZCA9PiBkICoqIDIsXG4gICAgICBzdHJva2U6IFwiYmxhY2tcIixcbiAgICAgIHN0cm9rZVdpZHRoOiA0XG4gICAgfSksXG4gICAgXG4gICAgLy8gQmx1ZSBsaW5lXG4gICAgUGxvdC5saW5rKFtudWxsXSwge1xuICAgICAgeDE6IDAsIHkxOiAtZyxcbiAgICAgIHgyOiAzLCB5MjogMyp1IC0gZyxcbiAgICAgIHN0cm9rZTogYmx1ZV9jb2xvciwgc3Ryb2tlV2lkdGg6IDVcbiAgICB9KSxcblxuICAgIC8vIFJlZCB2ZXJ0aWNhbCBzZWdtZW50XG4gICAgUGxvdC5saW5rKFtudWxsXSwge1xuICAgICAgeDE6IDAsIHkxOiAwLFxuICAgICAgeDI6IDAsIHkyOiAtZyxcbiAgICAgIHN0cm9rZTogcmVkX2NvbG9yLCBzdHJva2VXaWR0aDogNVxuICAgIH0pLFxuXG4gICAgLy8gYmxhY2sgZGFzaGVkIHZlcnRpY2FsIHNlZ21lbnRcbiAgICBQbG90LmxpbmsoW251bGxdLCB7XG4gICAgICB4MTogeDAsIHkxOiAwLFxuICAgICAgeDI6IHgwLCB5MjogeDAgKiogMixcbiAgICAgIHN0cm9rZTogXCJibGFja1wiLCBzdHJva2VXaWR0aDogMiwgc3Ryb2tlRGFzaGFycmF5OiBcIjQgNFwiXG4gICAgfSksXG5cbiAgICBQbG90LmRvdChbbnVsbF0sIHtcbiAgICAgIHg6IHgwLCBcbiAgICAgIHk6IHgwICoqIDIsIFxuICAgICAgcjogOCwgICAgICAgICAgICAvLyBSYWRpdXMgb2YgdGhlIGRvdFxuICAgICAgZmlsbDogcmVkX2NvbG9yLCAgIC8vIENvbG9yIG9mIHRoZSBkb3RcbiAgICAgIHN0cm9rZTogXCJ3aGl0ZVwiLCAvLyBPcHRpb25hbDogYWRkcyBhbiBvdXRsaW5lIHRvIG1ha2UgaXQgcG9wXG4gICAgICBzdHJva2VXaWR0aDogMlxuICAgIH0pLFxuXG4gICAgUGxvdC5ydWxlWShbMF0sIHtcbiAgICAgIHN0cm9rZTogXCIjYWFhXCIsICAgIC8vIEEgbGlnaHQgZ3JheSBjb2xvclxuICAgICAgc3Ryb2tlV2lkdGg6IDIsICAgIC8vIE1ha2VzIGl0IFwidGhpblwiXG4gICAgICBzdHJva2VPcGFjaXR5OiAwLjUgLy8gTWFrZXMgaXQgc3VidGxlXG4gICAgfSksXG5cbiAgICAvLyBURVhUIExBQkVMU1xuICAgIFBsb3QudGV4dChbbnVsbF0sIHtcbiAgICAgIHg6IDIuNywgeTogOCwgXG4gICAgICB0ZXh0OiBbXCJmKHgpXCJdLCBcbiAgICAgIGZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCIsIGR5OiAtMTAgXG4gICAgfSksXG5cbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiAwLCB5OiAtZy8yLCBcbiAgICAgIHRleHQ6IFtcImcoeOKCgClcIl0sIFxuICAgICAgZm9udFNpemU6IDE2LCBmb250V2VpZ2h0OiBcImJvbGRcIiwgZHg6IDMwLCBmaWxsOiByZWRfY29sb3IsIFxuICAgIH0pLFxuXG4gICAgUGxvdC50ZXh0KFtudWxsXSwge1xuICAgICAgeDogeDAsIHk6IDAsIFxuICAgICAgdGV4dDogW1wieOKCgFwiXSwgXG4gICAgICBmb250U2l6ZTogMTYsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeDogMCwgZHk6IDEwLCBmaWxsOiBcImJsYWNrXCIsIFxuICAgIH0pLFxuXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbmJsdWVfY29sb3IgPSBcIiMwMzQzZGZcIlxucmVkX2NvbG9yID0gXCIjZTUwMDAwXCJcbmxpZ2h0X2JsdWVfY29sb3IgPSBcIiM5NWQwZmNcIlxuLy8gMS4gRGVmaW5lIHRoZSBzbGlkZXIgd2l0aG91dCBhIGxhYmVsIHRvIGtlZXAgaXQgdGlnaHRcbnZpZXdvZiBwID0gSW5wdXRzLnJhbmdlKFswLCA0XSwge1xuICBzdGVwOiAwLjEsIFxuICB2YWx1ZTogMi41LFxuICB3aWR0aDogMjUwXG59KVxuXG4vLyAyLiBDcmVhdGUgYSBjZW50ZXJlZCByb3cgdXNpbmcgYSB0ZW1wbGF0ZSBsaXRlcmFsXG4vLyBUaGlzIHB1dHMgXCJTbG9wZSBwXCIgcmlnaHQgbmV4dCB0byB0aGUgbnVtYmVyIGJveFxuaHRtbGA8ZGl2IHN0eWxlPVwiZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAxMHB4OyBmb250LXdlaWdodDogYm9sZDsgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7IG1hcmdpbi1ib3R0b206IDE1cHg7XCI+XG4gIDxzcGFuPlNsb3BlIHA8L3NwYW4+ICR7dmlld29mIHB9XG48L2Rpdj5gXG5cbnhvID0gcCAvIDJcblxuLy8gMy4gRGVmaW5lIHRoZSBwbG90XG5QbG90LnBsb3Qoe1xuICBncmlkOiB0cnVlLFxuICBtYXJnaW5MZWZ0OiA2MCxcbiAgbWFyZ2luQm90dG9tOiA2MCxcbiAgd2lkdGg6IDYwMCwgXG4gIHN0eWxlOiB7IGZvbnRTaXplOiAxNCB9LFxuICB4OiB7IGRvbWFpbjogWzAsIDNdLCBsYWJlbDogXCJ4IOKGklwiLCBsYWJlbE9mZnNldDogNDUgfSxcbiAgeTogeyBkb21haW46IFstNCwgOF0sIGxhYmVsOiBcIuKGkSB5XCIsIGxhYmVsT2Zmc2V0OiA1MCB9LFxuICBtYXJrczogW1xuICAgIFBsb3QuYXhpc1goe2ZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCJ9KSxcbiAgICBQbG90LmF4aXNZKHtmb250U2l6ZTogMjAsIGZvbnRXZWlnaHQ6IFwiYm9sZFwifSksXG5cbiAgICAvLyBQYXJhYm9sYVxuICAgIFBsb3QubGluZShkMy5yYW5nZSgwLCAzLjEsIDAuMSksIHtcbiAgICAgIHg6IGQgPT4gZCxcbiAgICAgIHk6IGQgPT4gZCAqKiAyLFxuICAgICAgc3Ryb2tlOiBcImJsYWNrXCIsXG4gICAgICBzdHJva2VXaWR0aDogNFxuICAgIH0pLFxuICAgIFxuICAgIC8vIEJsdWUgbGluZVxuICAgIFBsb3QubGluZShkMy5yYW5nZSgwLCAzLjEsIDAuMSksIHtcbiAgICAgIHg6IGQgPT4gZCxcbiAgICAgIHk6IGQgPT4gcCAqIGQsXG4gICAgICBzdHJva2U6IGJsdWVfY29sb3IsXG4gICAgICBzdHJva2VXaWR0aDogNFxuICAgIH0pLFxuXG4gICAgLy8gTElHSFQgQmx1ZSBsaW5lXG4gICAgUGxvdC5saW5rKFtudWxsXSwge1xuICAgICAgeDE6IDAsIHkxOiAtcCAqIHAgLyA0LFxuICAgICAgeDI6IDMsIHkyOiBwKjMgLXAgKiBwIC8gNCxcbiAgICAgIHN0cm9rZTogbGlnaHRfYmx1ZV9jb2xvciwgc3Ryb2tlV2lkdGg6IDIsXG4gICAgfSksXG5cbiAgICAvLyBSZWQgdmVydGljYWwgc2VnbWVudFxuICAgIFBsb3QubGluayhbbnVsbF0sIHtcbiAgICAgIHgxOiBwIC8gMiwgeTE6IChwICoqIDIpIC8gMixcbiAgICAgIHgyOiBwIC8gMiwgeTI6IChwICoqIDIpIC8gNCxcbiAgICAgIHN0cm9rZTogcmVkX2NvbG9yLCBzdHJva2VXaWR0aDogNVxuICAgIH0pLFxuXG4gICAgLy8gVGhlIGdyYXkgdGhpY2sgc3RyYWlnaHQgbGluZSAoVmVydGljYWwgc2VnbWVudClcbiAgICBQbG90LmxpbmsoW251bGxdLCB7XG4gICAgICB4MTogcCAvIDIsIHkxOiAwLFxuICAgICAgeDI6IHAgLyAyLCB5MjogKHAgKiogMikgLyA0LFxuICAgICAgc3Ryb2tlOiBcImdyYXlcIiwgc3Ryb2tlV2lkdGg6IDVcbiAgICB9KSxcblxuICAgIFBsb3QucnVsZVkoWzBdLCB7XG4gICAgICBzdHJva2U6IFwiI2FhYVwiLCAgICAvLyBBIGxpZ2h0IGdyYXkgY29sb3JcbiAgICAgIHN0cm9rZVdpZHRoOiAyLCAgICAvLyBNYWtlcyBpdCBcInRoaW5cIlxuICAgICAgc3Ryb2tlT3BhY2l0eTogMC41IC8vIE1ha2VzIGl0IHN1YnRsZVxuICAgIH0pLFxuXG4gICAgLy8gVEVYVCBMQUJFTFNcbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiAyLjcsIHk6IDgsIFxuICAgICAgdGV4dDogW1wiZih4KVwiXSwgXG4gICAgICBmb250U2l6ZTogMjAsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeTogLTEwIFxuICAgIH0pLFxuXG4gICAgUGxvdC50ZXh0KFtudWxsXSwge1xuICAgICAgeDogMiwgeTogMiAqIHAsIFxuICAgICAgdGV4dDogW1wicHhcIl0sIFxuICAgICAgZm9udFNpemU6IDIwLCBmaWxsOiBibHVlX2NvbG9yLCB0ZXh0QW5jaG9yOiBcInN0YXJ0XCIsIGR4OiAwLCBkeTogMTAgXG4gICAgfSksXG5cbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiBwIC8gMiwgeTogKHAgKiogMikgKiAzIC8gOCwgXG4gICAgICB0ZXh0OiBbXCJnKHApXCJdLCBcbiAgICAgIGZvbnRTaXplOiAxNSwgZmlsbDogcmVkX2NvbG9yLCBmb250V2VpZ2h0OiBcImJvbGRcIiwgZHk6IDAsIGR4OiAyMCBcbiAgICB9KSxcblxuICAgIFBsb3QudGV4dChbbnVsbF0sIHtcbiAgICAgIHg6IHAgLyAyLCB5OiAocCAqKiAyKSAqIDEgLyA4LCBcbiAgICAgIHRleHQ6IFtcImYoeClcIl0sIFxuICAgICAgZm9udFNpemU6IDE1LCBmaWxsOiBcImJsYWNrXCIsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeTogMCwgZHg6IDIwIFxuICAgIH0pLFxuXG4gICAgUGxvdC50ZXh0KFtudWxsXSwge1xuICAgICAgeDogcCAvIDIsIHk6IDAsIFxuICAgICAgdGV4dDogW1wieChwKVwiXSwgXG4gICAgICBmb250U2l6ZTogMTYsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeDogMCwgZHk6IDEwLCBmaWxsOiBcImJsYWNrXCIsIFxuICAgIH0pLFxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd4MCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdwJykifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy8gMS4gRGVmaW5lIHRoZSBzbGlkZXIgd2l0aG91dCBhIGxhYmVsIHRvIGtlZXAgaXQgdGlnaHRcbnZpZXdvZiB4MCA9IElucHV0cy5yYW5nZShbMCwgM10sIHtcbiAgc3RlcDogMC4xLCBcbiAgdmFsdWU6IDIuNSxcbiAgd2lkdGg6IDI1MFxufSlcblxuLy8gMi4gQ3JlYXRlIGEgY2VudGVyZWQgcm93IHVzaW5nIGEgdGVtcGxhdGUgbGl0ZXJhbFxuLy8gVGhpcyBwdXRzIFwiU2xvcGUgcFwiIHJpZ2h0IG5leHQgdG8gdGhlIG51bWJlciBib3hcbmh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogMTBweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBtYXJnaW4tYm90dG9tOiAxNXB4O1wiPlxuICA8c3Bhbj544oKAPC9zcGFuPiAke3ZpZXdvZiB4MH1cbjwvZGl2PmBcblxucDEgPSAyICogeDBcbmcgPSBwMSAqIHgwIC0gKHgwICoqIDIpXG5hbmdsZV9kZWdyZWVzID0gLSBNYXRoLmF0YW4ocDEqKDMvMTYpKig0MDAvNjAwKSkgKiAoMTgwIC8gTWF0aC5QSSlcblxuLy8gMy4gRGVmaW5lIHRoZSBwbG90XG5QbG90LnBsb3Qoe1xuICBncmlkOiB0cnVlLFxuICBtYXJnaW5MZWZ0OiA2MCxcbiAgbWFyZ2luQm90dG9tOiA2MCxcbiAgd2lkdGg6IDYwMCxcbiAgaGVpZ2h0OiA0MDAsXG4gIHN0eWxlOiB7IGZvbnRTaXplOiAxNCB9LFxuICB4OiB7IGRvbWFpbjogWzAsIDNdLCBsYWJlbDogXCJ4IOKGklwiLCBsYWJlbE9mZnNldDogNDUgfSxcbiAgeTogeyBkb21haW46IFstOCwgOF0sIGxhYmVsOiBcIuKGkSB5XCIsIGxhYmVsT2Zmc2V0OiA1MCB9LFxuICBtYXJrczogW1xuICAgIFBsb3QuYXhpc1goe2ZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCJ9KSxcbiAgICBQbG90LmF4aXNZKHtmb250U2l6ZTogMjAsIGZvbnRXZWlnaHQ6IFwiYm9sZFwifSksXG5cbiAgICAvLyBQYXJhYm9sYVxuICAgIFBsb3QubGluZShkMy5yYW5nZSgwLCAzLjEsIDAuMSksIHtcbiAgICAgIHg6IGQgPT4gZCxcbiAgICAgIHk6IGQgPT4gZCAqKiAyLFxuICAgICAgc3Ryb2tlOiBcImJsYWNrXCIsXG4gICAgICBzdHJva2VXaWR0aDogNFxuICAgIH0pLFxuICAgIFxuICAgIC8vIEJsdWUgbGluZVxuICAgIFBsb3QubGluayhbbnVsbF0sIHtcbiAgICAgIHgxOiAwLCB5MTogLWcsXG4gICAgICB4MjogMywgeTI6IDMqcDEgLSBnLFxuICAgICAgc3Ryb2tlOiBibHVlX2NvbG9yLCBzdHJva2VXaWR0aDogNVxuICAgIH0pLFxuXG4gICAgLy8gUmVkIHZlcnRpY2FsIHNlZ21lbnRcbiAgICBQbG90LmxpbmsoW251bGxdLCB7XG4gICAgICB4MTogMCwgeTE6IDAsXG4gICAgICB4MjogMCwgeTI6IC1nLFxuICAgICAgc3Ryb2tlOiByZWRfY29sb3IsIHN0cm9rZVdpZHRoOiA1XG4gICAgfSksXG5cbiAgICAvLyBibGFjayBkYXNoZWQgdmVydGljYWwgc2VnbWVudFxuICAgIFBsb3QubGluayhbbnVsbF0sIHtcbiAgICAgIHgxOiB4MCwgeTE6IDAsXG4gICAgICB4MjogeDAsIHkyOiB4MCAqKiAyLFxuICAgICAgc3Ryb2tlOiBcImJsYWNrXCIsIHN0cm9rZVdpZHRoOiAyLCBzdHJva2VEYXNoYXJyYXk6IFwiNCA0XCJcbiAgICB9KSxcblxuICAgIFBsb3QuZG90KFtudWxsXSwge1xuICAgICAgeDogeDAsIFxuICAgICAgeTogeDAgKiogMiwgXG4gICAgICByOiA4LCAgICAgICAgICAgIC8vIFJhZGl1cyBvZiB0aGUgZG90XG4gICAgICBmaWxsOiByZWRfY29sb3IsICAgLy8gQ29sb3Igb2YgdGhlIGRvdFxuICAgICAgc3Ryb2tlOiBcIndoaXRlXCIsIC8vIE9wdGlvbmFsOiBhZGRzIGFuIG91dGxpbmUgdG8gbWFrZSBpdCBwb3BcbiAgICAgIHN0cm9rZVdpZHRoOiAyXG4gICAgfSksXG5cbiAgICBQbG90LnJ1bGVZKFswXSwge1xuICAgICAgc3Ryb2tlOiBcIiNhYWFcIiwgICAgLy8gQSBsaWdodCBncmF5IGNvbG9yXG4gICAgICBzdHJva2VXaWR0aDogMiwgICAgLy8gTWFrZXMgaXQgXCJ0aGluXCJcbiAgICAgIHN0cm9rZU9wYWNpdHk6IDAuNSAvLyBNYWtlcyBpdCBzdWJ0bGVcbiAgICB9KSxcblxuICAgIC8vIFRFWFQgTEFCRUxTXG4gICAgUGxvdC50ZXh0KFtudWxsXSwge1xuICAgICAgeDogMi43LCB5OiA4LCBcbiAgICAgIHRleHQ6IFtcImYoeClcIl0sIFxuICAgICAgZm9udFNpemU6IDIwLCBmb250V2VpZ2h0OiBcImJvbGRcIiwgZHk6IC0xMCBcbiAgICB9KSxcblxuICAgIFBsb3QudGV4dChbbnVsbF0sIHtcbiAgICAgIHg6IDAsIHk6IC1nLzIsIFxuICAgICAgdGV4dDogW1wiZ1wiXSwgXG4gICAgICBmb250U2l6ZTogMjAsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeDogMTUsIGZpbGw6IHJlZF9jb2xvciwgXG4gICAgfSksXG5cbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiB4MCwgeTogMCwgXG4gICAgICB0ZXh0OiBbXCJ44oKAXCJdLCBcbiAgICAgIGZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCIsIGR4OiAwLCBkeTogMTAsIGZpbGw6IFwiYmxhY2tcIiwgXG4gICAgfSksXG5cbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiAyLCB5OiAyKnAxIC0gZyAtMC41LCBcbiAgICAgIHRleHQ6IFtcInRhbmdlbnQgbGluZSB5ID0gcHggLSBnXCJdLCBcbiAgICAgIGZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCIsIGR4OiAwLCBkeTogMTAsIGZpbGw6IGJsdWVfY29sb3IsIHJvdGF0ZTogYW5nbGVfZGVncmVlc1xuICAgIH0pLFxuXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbmJsdWVfY29sb3IgPSBcIiMwMzQzZGZcIlxucmVkX2NvbG9yID0gXCIjZTUwMDAwXCJcbi8vIDEuIERlZmluZSB0aGUgc2xpZGVyIHdpdGhvdXQgYSBsYWJlbCB0byBrZWVwIGl0IHRpZ2h0XG52aWV3b2YgcCA9IElucHV0cy5yYW5nZShbMCwgNF0sIHtcbiAgc3RlcDogMC4xLCBcbiAgdmFsdWU6IDIuNSxcbiAgd2lkdGg6IDI1MFxufSlcblxuLy8gMi4gQ3JlYXRlIGEgY2VudGVyZWQgcm93IHVzaW5nIGEgdGVtcGxhdGUgbGl0ZXJhbFxuLy8gVGhpcyBwdXRzIFwiU2xvcGUgcFwiIHJpZ2h0IG5leHQgdG8gdGhlIG51bWJlciBib3hcbmh0bWxgPGRpdiBzdHlsZT1cImRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogMTBweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmOyBtYXJnaW4tYm90dG9tOiAxNXB4O1wiPlxuICA8c3Bhbj5TbG9wZSBwPC9zcGFuPiAke3ZpZXdvZiBwfVxuPC9kaXY+YFxuXG54byA9IHAgLyAyXG5cbi8vIDMuIERlZmluZSB0aGUgcGxvdFxuUGxvdC5wbG90KHtcbiAgZ3JpZDogdHJ1ZSxcbiAgbWFyZ2luTGVmdDogNjAsXG4gIG1hcmdpbkJvdHRvbTogNjAsXG4gIHdpZHRoOiA2MDAsIFxuICBzdHlsZTogeyBmb250U2l6ZTogMTQgfSxcbiAgeDogeyBkb21haW46IFswLCAzXSwgbGFiZWw6IFwieCDihpJcIiwgbGFiZWxPZmZzZXQ6IDQ1IH0sXG4gIHk6IHsgZG9tYWluOiBbLTQsIDhdLCBsYWJlbDogXCLihpEgeVwiLCBsYWJlbE9mZnNldDogNTAgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmF4aXNYKHtmb250U2l6ZTogMjAsIGZvbnRXZWlnaHQ6IFwiYm9sZFwifSksXG4gICAgUGxvdC5heGlzWSh7Zm9udFNpemU6IDIwLCBmb250V2VpZ2h0OiBcImJvbGRcIn0pLFxuXG4gICAgLy8gUGFyYWJvbGFcbiAgICBQbG90LmxpbmUoZDMucmFuZ2UoMCwgMy4xLCAwLjEpLCB7XG4gICAgICB4OiBkID0+IGQsXG4gICAgICB5OiBkID0+IGQgKiogMixcbiAgICAgIHN0cm9rZTogXCJibGFja1wiLFxuICAgICAgc3Ryb2tlV2lkdGg6IDRcbiAgICB9KSxcbiAgICBcbiAgICAvLyBCbHVlIGxpbmVcbiAgICBQbG90LmxpbmUoZDMucmFuZ2UoMCwgMy4xLCAwLjEpLCB7XG4gICAgICB4OiBkID0+IGQsXG4gICAgICB5OiBkID0+IHAgKiBkLFxuICAgICAgc3Ryb2tlOiBibHVlX2NvbG9yLFxuICAgICAgc3Ryb2tlV2lkdGg6IDRcbiAgICB9KSxcblxuICAgIC8vIExJR0hUIEJsdWUgbGluZVxuICAgIFBsb3QubGluayhbbnVsbF0sIHtcbiAgICAgIHgxOiAwLCB5MTogLXAgKiBwIC8gNCxcbiAgICAgIHgyOiAzLCB5MjogcCozIC1wICogcCAvIDQsXG4gICAgICBzdHJva2U6IFwiI2RkZFwiLCBzdHJva2VXaWR0aDogMixcbiAgICB9KSxcblxuICAgIC8vIFJlZCB2ZXJ0aWNhbCBzZWdtZW50XG4gICAgUGxvdC5saW5rKFtudWxsXSwge1xuICAgICAgeDE6IHAgLyAyLCB5MTogKHAgKiogMikgLyAyLFxuICAgICAgeDI6IHAgLyAyLCB5MjogKHAgKiogMikgLyA0LFxuICAgICAgc3Ryb2tlOiByZWRfY29sb3IsIHN0cm9rZVdpZHRoOiA1XG4gICAgfSksXG5cbiAgICAvLyBUaGUgZ3JheSB0aGljayBzdHJhaWdodCBsaW5lIChWZXJ0aWNhbCBzZWdtZW50KVxuICAgIFBsb3QubGluayhbbnVsbF0sIHtcbiAgICAgIHgxOiBwIC8gMiwgeTE6IDAsXG4gICAgICB4MjogcCAvIDIsIHkyOiAocCAqKiAyKSAvIDQsXG4gICAgICBzdHJva2U6IFwiZ3JheVwiLCBzdHJva2VXaWR0aDogNVxuICAgIH0pLFxuXG4gICAgUGxvdC5ydWxlWShbMF0sIHtcbiAgICAgIHN0cm9rZTogXCIjYWFhXCIsICAgIC8vIEEgbGlnaHQgZ3JheSBjb2xvclxuICAgICAgc3Ryb2tlV2lkdGg6IDIsICAgIC8vIE1ha2VzIGl0IFwidGhpblwiXG4gICAgICBzdHJva2VPcGFjaXR5OiAwLjUgLy8gTWFrZXMgaXQgc3VidGxlXG4gICAgfSksXG5cbiAgICAvLyBURVhUIExBQkVMU1xuICAgIFBsb3QudGV4dChbbnVsbF0sIHtcbiAgICAgIHg6IDIuNywgeTogOCwgXG4gICAgICB0ZXh0OiBbXCJmKHgpXCJdLCBcbiAgICAgIGZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCIsIGR5OiAtMTAgXG4gICAgfSksXG5cbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiAyLCB5OiAyICogcCwgXG4gICAgICB0ZXh0OiBbXCJweFwiXSwgXG4gICAgICBmb250U2l6ZTogMjAsIGZpbGw6IGJsdWVfY29sb3IsIHRleHRBbmNob3I6IFwic3RhcnRcIiwgZHg6IDAsIGR5OiAxMCBcbiAgICB9KSxcblxuICAgIFBsb3QudGV4dChbbnVsbF0sIHtcbiAgICAgIHg6IHAgLyAyLCB5OiAocCAqKiAyKSAqIDMgLyA4LCBcbiAgICAgIHRleHQ6IFtcImcocClcIl0sIFxuICAgICAgZm9udFNpemU6IDE1LCBmaWxsOiByZWRfY29sb3IsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeTogMCwgZHg6IDIwIFxuICAgIH0pLFxuXG4gICAgUGxvdC50ZXh0KFtudWxsXSwge1xuICAgICAgeDogcCAvIDIsIHk6IChwICoqIDIpICogMSAvIDgsIFxuICAgICAgdGV4dDogW1wiZih4KVwiXSwgXG4gICAgICBmb250U2l6ZTogMTUsIGZpbGw6IFwiYmxhY2tcIiwgZm9udFdlaWdodDogXCJib2xkXCIsIGR5OiAwLCBkeDogMjAgXG4gICAgfSksXG5cbiAgICBQbG90LnRleHQoW251bGxdLCB7XG4gICAgICB4OiBwIC8gMiwgeTogMCwgXG4gICAgICB0ZXh0OiBbXCJ4KHApXCJdLCBcbiAgICAgIGZvbnRTaXplOiAxNiwgZm9udFdlaWdodDogXCJib2xkXCIsIGR4OiAwLCBkeTogMTAsIGZpbGw6IFwiYmxhY2tcIiwgXG4gICAgfSksXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbi8vIDEuIERlZmluZSB0aGUgc2xpZGVyIHdpdGhvdXQgYSBsYWJlbCB0byBrZWVwIGl0IHRpZ2h0XG52aWV3b2YgcDIgPSBJbnB1dHMucmFuZ2UoWzAsIDddLCB7XG4gIHN0ZXA6IDAuMSwgXG4gIHZhbHVlOiAyLjUsXG4gIHdpZHRoOiAyNTBcbn0pXG5cbi8vIDIuIENyZWF0ZSBhIGNlbnRlcmVkIHJvdyB1c2luZyBhIHRlbXBsYXRlIGxpdGVyYWxcbi8vIFRoaXMgcHV0cyBcIlNsb3BlIHBcIiByaWdodCBuZXh0IHRvIHRoZSBudW1iZXIgYm94XG5odG1sYDxkaXYgc3R5bGU9XCJkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDEwcHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBmb250LWZhbWlseTogc2Fucy1zZXJpZjsgbWFyZ2luLWJvdHRvbTogMTVweDtcIj5cbiAgPHNwYW4+U2xvcGUgcDwvc3Bhbj4gJHt2aWV3b2YgcDJ9XG48L2Rpdj5gXG54X25hdWdodCA9IHAyIC8gMlxuZ2VlID0gcDIgKiB4X25hdWdodCAtICh4X25hdWdodCAqKiAyKVxuXG4vLyAzLiBEZWZpbmUgdGhlIHBsb3RcblBsb3QucGxvdCh7XG4gIGdyaWQ6IHRydWUsXG4gIG1hcmdpbkxlZnQ6IDYwLFxuICBtYXJnaW5Cb3R0b206IDYwLFxuICB3aWR0aDogNjAwLFxuICBoZWlnaHQ6IDQwMCxcbiAgc3R5bGU6IHsgZm9udFNpemU6IDE0IH0sXG4gIHg6IHsgZG9tYWluOiBbMCwgM10sIGxhYmVsOiBcIngg4oaSXCIsIGxhYmVsT2Zmc2V0OiA0NSB9LFxuICB5OiB7IGRvbWFpbjogWy0yLCA4XSwgbGFiZWw6IFwi4oaRIHlcIiwgbGFiZWxPZmZzZXQ6IDUwIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5heGlzWCh7Zm9udFNpemU6IDIwLCBmb250V2VpZ2h0OiBcImJvbGRcIn0pLFxuICAgIFBsb3QuYXhpc1koe2ZvbnRTaXplOiAyMCwgZm9udFdlaWdodDogXCJib2xkXCJ9KSxcblxuICAgIC8vIFBhcmFib2xhXG4gICAgUGxvdC5saW5lKGQzLnJhbmdlKDAsIDMuMSwgMC4xKSwge1xuICAgICAgeDogZCA9PiBkLFxuICAgICAgeTogZCA9PiBkICoqIDIsXG4gICAgICBzdHJva2U6IFwiYmxhY2tcIixcbiAgICAgIHN0cm9rZVdpZHRoOiA0XG4gICAgfSksXG4gICAgXG4gICAgLy8gQmx1ZSBsaW5lXG4gICAgUGxvdC5saW5rKFtudWxsXSwge1xuICAgICAgeDE6IDAsIHkxOiAtZ2VlLFxuICAgICAgeDI6IDMsIHkyOiAzKnAyIC0gZ2VlLFxuICAgICAgc3Ryb2tlOiBibHVlX2NvbG9yLCBzdHJva2VXaWR0aDogNVxuICAgIH0pLFxuXG4gICAgLy8gUmVkIHZlcnRpY2FsIHNlZ21lbnRcbiAgICBQbG90LmxpbmsoW251bGxdLCB7XG4gICAgICB4MTogMiwgeTE6IDAsXG4gICAgICB4MjogMiwgeTI6IHAyKjIgLSBnZWUsXG4gICAgICBzdHJva2U6IHJlZF9jb2xvciwgc3Ryb2tlV2lkdGg6IDVcbiAgICB9KSxcblxuICAgIC8vIGJsYWNrIGRhc2hlZCB2ZXJ0aWNhbCBzZWdtZW50XG4gICAgUGxvdC5saW5rKFtudWxsXSwge1xuICAgICAgeDE6IDIsIHkxOiAwLFxuICAgICAgeDI6IDIsIHkyOiAyICoqIDIsXG4gICAgICBzdHJva2U6IFwiYmxhY2tcIiwgc3Ryb2tlV2lkdGg6IDIsIHN0cm9rZURhc2hhcnJheTogXCI0IDRcIlxuICAgIH0pLFxuXG5cbiAgICBQbG90LnJ1bGVZKFswXSwge1xuICAgICAgc3Ryb2tlOiBcIiNhYWFcIiwgICAgLy8gQSBsaWdodCBncmF5IGNvbG9yXG4gICAgICBzdHJva2VXaWR0aDogMiwgICAgLy8gTWFrZXMgaXQgXCJ0aGluXCJcbiAgICAgIHN0cm9rZU9wYWNpdHk6IDAuNSAvLyBNYWtlcyBpdCBzdWJ0bGVcbiAgICB9KSxcblxuICAgIC8vIFRFWFQgTEFCRUxTXG4gICAgUGxvdC50ZXh0KFtudWxsXSwge1xuICAgICAgeDogMi43LCB5OiA4LCBcbiAgICAgIHRleHQ6IFtcImYoeClcIl0sIFxuICAgICAgZm9udFNpemU6IDIwLCBmb250V2VpZ2h0OiBcImJvbGRcIiwgZHk6IC0xMCBcbiAgICB9KSxcblxuICAgIFBsb3QudGV4dChbbnVsbF0sIHtcbiAgICAgIHg6IDIsIHk6IDAsIFxuICAgICAgdGV4dDogW1wieOKCgFwiXSwgXG4gICAgICBmb250U2l6ZTogMjAsIGZvbnRXZWlnaHQ6IFwiYm9sZFwiLCBkeDogMCwgZHk6IDEwLCBmaWxsOiBcImJsYWNrXCIsIFxuICAgIH0pLFxuXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3gwJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3AnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgncDInKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
