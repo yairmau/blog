@@ -6,6 +6,7 @@ website:
   title: "Yair Mau"
   search: true
   favicon: archive/site_images/favicon.ico
+  google-analytics: "G-X3XFX2XS7M"
   navbar:
     logo: archive/site_images/site-logo-light.png
     pinned: false
