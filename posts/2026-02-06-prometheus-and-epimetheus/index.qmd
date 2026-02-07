@@ -1,0 +1,30 @@
+---
+layout: post
+title: Prometheus is to Epimetheus
+description: "as Deduction is to Induction"
+date: 2026-02-06
+author: Yair Mau
+toc: true
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+# image: arnold43.png
+# categories: [math, physics]
+---
+
+> Prometheus is to Epimetheus as Deduction is to Induction.
+
+This is my insight from today.
+
+I was listening to an excellent audiobook, [How to Think Like Socrates, by Donald J. Robertson](https://www.goodreads.com/book/show/203578835-how-to-think-like-socrates), and I arrived to the part where Protagoras tells the story of Prometheus and Epimetheus. This struck a chord with me, as I have been [thinking a lot about the concepts of deduction and induction](https://yairmau.com/statistics/foundations/probability_and_likelihood.html), especially with respect to statistics and machine learning.
+
+The name Prometheus means "forethought", while Epimetheus means "afterthought". Prometheus is the one who thinks ahead, plans, and anticipates the consequences of his actions. Epimetheus, on the other hand, is the one who only thinks after the fact, reflecting on what has already happened.
+
+In my opinion, that goes really well with the concepts of deduction and induction. Deduction is the process of reasoning from general principles to specific conclusions. It is a forward-looking process, where we start with a general theory or hypothesis and deduce specific predictions or outcomes. This is like Prometheus, who thinks ahead and plans.
+
+Induction, on the other hand, is the process of reasoning from after-the-fact observations to general principles. It is a backward-looking process, where we start with specific data or evidence and induce general theories or hypotheses. This is like Epimetheus, who only thinks after the fact and reflects on what has already happened.
+
+A last nugget: Pandora, Epimetheus's wife, opens the jar (not box!) and releases all the evils into the world, but she manages to close it before hope can escape. This is the hope we have when doing induction: we hope that the patterns we observe in the data will hold true in the future, even though we can never be sure.
+
+After I thought of this analogy, I talked it over with Gemini and ChatGPT to refine the argument. I then found out that a similar argument [has already been made by Laura H. Clarke in 2020](https://journals.openedition.org/cve/8211?utm_source=chatgpt.com). Nevermind, I like that I thought of it by myself.
