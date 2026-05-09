@@ -14,18 +14,32 @@
     "text": "This is my first blog post on this website 🥳\nEvery now and then I’ll write about what’s going on with my research group, and also about random stuff that interest me.\nSee you around!"
   },
   {
-    "objectID": "posts/2025-09-17-celestial/index.html",
-    "href": "posts/2025-09-17-celestial/index.html",
-    "title": "Celestial",
+    "objectID": "posts/2025-02-27-a4paper/index.html",
+    "href": "posts/2025-02-27-a4paper/index.html",
+    "title": "A4 paper",
     "section": "",
-    "text": "They call it online the Celestial Kusudama.\nThese are the instructions to Joseph Hwang’s design.\n\n\nIn geometry, this is the Rhombic hexecontahedron, one of the setllations of the Rhombic triacontahedron.\nThis is the same shape as Wolfram Mathematica’s logo."
+    "text": "The various sizes of the A series have an interesting property. If, for example, you divide the A4 sheet into two equal parts, each of the resulting rectangles will be an A5 sheet, whose proportions are exactly the same as the original A4."
   },
   {
-    "objectID": "posts/2025-06-14-phizz/index.html",
-    "href": "posts/2025-06-14-phizz/index.html",
-    "title": "PHiZZ",
+    "objectID": "posts/2025-02-27-a4paper/index.html#what-is-this-proportion",
+    "href": "posts/2025-02-27-a4paper/index.html#what-is-this-proportion",
+    "title": "A4 paper",
+    "section": "what is this proportion?",
+    "text": "what is this proportion?\nLet’s call \\(a\\) and \\(b\\) the long and short sides of the A4 sheet.\nQuestion: what is \\(a/b\\)?\nThe sides of the A5 sheet are then \\(b\\) (long side) and \\(a/2\\) (short side). Because the proportions of the A5 are exactly the same as those of the A4, we have\n\\[\n\\frac{a}{b} = \\frac{b}{\\frac{a}{2}},\n\\]\nwhich after cross-multiplying gives\n\\[\n\\frac{a^2}{b^2} = 2.\n\\]\nTaking the square root gives\n\\[\n\\frac{a}{b} = \\sqrt{2}.\n\\]"
+  },
+  {
+    "objectID": "posts/2025-02-27-a4paper/index.html#why-a4-whats-a0",
+    "href": "posts/2025-02-27-a4paper/index.html#why-a4-whats-a0",
+    "title": "A4 paper",
+    "section": "Why A4? What’s A0?",
+    "text": "Why A4? What’s A0?\nNow that we found the proportion of the A series, we can ask a follow up:\nQuestion: Why does the A4 have this specific size? What’s special about it?\nThe A series starts with A0, which has the nice property of having an area of 1 m\\(^2\\).\n\n\n\nSize\nArea (m²)\n\n\n\n\nA0\n\\(1\\)\n\n\nA1\n\\(1/2\\)\n\n\nA2\n\\(1/4\\)\n\n\nA3\n\\(1/8\\)\n\n\nA4\n\\(1/16\\)\n\n\n\nWe found that the area of an A4 is \\(1/16\\) m\\(^2\\), so now we can write a system of two equations:\n\\[\n\\begin{align}\n\\frac{a}{b} &= \\sqrt{2} \\\\\na \\cdot b &= \\frac{1}{16}\n\\end{align}\n\\]\nSolving for \\(a\\) in the first equation gives \\(a=\\sqrt{2}b\\), and substituting this into the second equation gives\n\\[\n\\begin{align}\nb^2\\sqrt{2} &= \\frac{1}{16} \\\\\n\\Rightarrow b^2 &= \\frac{1}{\\sqrt{2}\\cdot 2^4} = \\frac{1}{2^{\\frac{1}{2}}\\cdot 2^4} = \\frac{1}{2^{\\frac{1}{2}+4}} \\\\\n\\Rightarrow b &= 2^{-\\frac{1}{4}-2}\n\\end{align}\n\\]\nand clearly\n\\[\n\\begin{align}\na &= \\sqrt{2}b \\\\\n\\Rightarrow a &= 2^{\\frac{1}{2}}2^{-\\frac{1}{4}-2} = 2^{\\frac{1}{2}-\\frac{1}{4}-2} \\\\\n\\Rightarrow a &= 2^{\\frac{1}{4}-2} \\\\\n\\end{align}\n\\]\nTo sum up: \\[\na = 2^{\\frac{1}{4}-2} \\qquad b = 2^{-\\frac{1}{4}-2}\n\\]\n\na = 2**(1/4-2)   # in meters\nb = 2**(-1/4-2)  # in meters\nprint(f\"a={1000*a:.0f} mm, b={1000*b:.0f} mm\")\nprint(\"Check out the exact values in the figure at the top of this post\")\n\na=297 mm, b=210 mm\nCheck out the exact values in the figure at the top of this post\n\n\nAnd this, my friends, concludes today’s exercise :)"
+  },
+  {
+    "objectID": "posts/2021-11-08-tomoko-fuse/index.html",
+    "href": "posts/2021-11-08-tomoko-fuse/index.html",
+    "title": "Tomoko Fuse Unit Origami",
     "section": "",
-    "text": "The PHiZZ module is probably the easiest modular origami unit to fold, and it is also very versatile. PHiZZ stands for pentagon-hexagon zig-zag unit, because you can make a shape made of pentagons and hexagons.\nThe shape below is make of 12 pentagons. \nFrom the excellent origametry.net, we learn how to fold the PHiZZ unit.\n\nTo put the units together, follow this:\n\nIt is nice to build shapes out of 3 colors, which means that we can construct a Hamiltonian path through the shape, which is a path that visits each vertex exactly once. See the “football” below (12 pentagons, each surrounded by 5 hexagons). If you choose one color to ignore, you can think of the hamiltonian path as the one that is made of the other two colors.\n\nExtra links:\n\nNotes on Spherical Buckyballs – Part 1\nNotes on Spherical Buckyballs – Part 2\nLarge Phizz Buckyball"
+    "text": "This structure has the general shape of a dodecahedron, with 12 beautiful pentagonal stars embeded in it. I found a while back a scan of the book Tomoko Fuse Unit Origami Fantasy. The book is all written in japanese, but I could make sense of the diagrams.\nTomoko Fuse is a master of modular origami, just google her name and you’ll find tons of fun projects.\nI used craft paper to give the structure a muted tones and a rustic feel. I think it turned out pretty good 😊."
   },
   {
     "objectID": "posts/2026-01-31-legendre-transformations/index.html",
@@ -182,115 +196,101 @@
     "text": "I’ve been interested lately in the Pythagorean theorem, and the myriad of ways one can prove it.\n\nAn excellent resource is the website Cut The Knot.\nAnother great source is John C. Sparks’ The Pythagorean Theorem: Crown Jewel of Mathematics.\nFinally, I would recommend Eli Maor’s book, “The Pythagorean Theorem”.\n\n\n\n\n\nI used my tablet to write down my own version of some of the nicest proofs, see here."
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html",
+    "objectID": "posts/2025-06-14-phizz/index.html",
+    "href": "posts/2025-06-14-phizz/index.html",
+    "title": "PHiZZ",
+    "section": "",
+    "text": "The PHiZZ module is probably the easiest modular origami unit to fold, and it is also very versatile. PHiZZ stands for pentagon-hexagon zig-zag unit, because you can make a shape made of pentagons and hexagons.\nThe shape below is make of 12 pentagons. \nFrom the excellent origametry.net, we learn how to fold the PHiZZ unit.\n\nTo put the units together, follow this:\n\nIt is nice to build shapes out of 3 colors, which means that we can construct a Hamiltonian path through the shape, which is a path that visits each vertex exactly once. See the “football” below (12 pentagons, each surrounded by 5 hexagons). If you choose one color to ignore, you can think of the hamiltonian path as the one that is made of the other two colors.\n\nExtra links:\n\nNotes on Spherical Buckyballs – Part 1\nNotes on Spherical Buckyballs – Part 2\nLarge Phizz Buckyball"
+  },
+  {
+    "objectID": "posts/2025-09-17-celestial/index.html",
+    "href": "posts/2025-09-17-celestial/index.html",
+    "title": "Celestial",
+    "section": "",
+    "text": "They call it online the Celestial Kusudama.\nThese are the instructions to Joseph Hwang’s design.\n\n\nIn geometry, this is the Rhombic hexecontahedron, one of the setllations of the Rhombic triacontahedron.\nThis is the same shape as Wolfram Mathematica’s logo."
+  },
+  {
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html",
     "title": "Fold into thirds",
     "section": "",
     "text": "How to fold a square piece of paper into thirds? In this reddit post I found the following image. I’ll analyze each procedure, and try to explain why it works. We will assume that the square has side length 1."
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#challenge",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#challenge",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#challenge",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#challenge",
     "title": "Fold into thirds",
     "section": "",
     "text": "How to fold a square piece of paper into thirds? In this reddit post I found the following image. I’ll analyze each procedure, and try to explain why it works. We will assume that the square has side length 1."
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-a",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-a",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-a",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-a",
     "title": "Fold into thirds",
     "section": "method A",
     "text": "method A\n\nFold three creases in this order:\n\n1 divides the paper in half horizontally;\n2 connects opposing vertices;\n3 makes the diagonal of the top rectangle.\n\nThe blue and orange triangles are similar: the angle at their shared vertex is the same (vertical angle theorem), and the angles marked \\(\\alpha\\) and \\(\\beta\\) are also the same (alternate interior angle theorem).\nThe base of the orange triangle (right side) is double the base of the blue triangle (left side) because crease 1 says so.\nTherefore the height \\(H\\) of the orange triangle is double the height \\(h\\) of the blue triangle (similarity): \\(H=2h\\).\nBecause the side or the square is \\(h+H = 3h\\), the point marked with a circle divides the paper into thirds in the horizontal direction. \\(\\blacksquare\\)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-b",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-b",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-b",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-b",
     "title": "Fold into thirds",
     "section": "method B",
     "text": "method B\n\nStep 1: crease the left and bottom sides at the middle.\nStep 2: crease again at the middle of the middle, making ¼ segments as shown in the figure.\nJoin the two points marked with 2, and make a valley fold (dashed line). If you’re not familiar with origami this will be hard to understand, so take a piece of paper and try this out.\nThe act of joining these points marked with 2 makes two line segments of equal size, marked as \\(y\\).\nOur job is to show that the segment marked with \\(x\\) equals one third.\n\n\nFrom the small right-triangle on the bottom left, we use Pythagoras’ formula:\n\\[\n\\left(\\frac{1}{4}\\right)^2 + x^2 = y^2.\n\\]\nThe bottom side of the square can be written as:\n\\[\nx + y + \\frac{1}{4} = 1 \\quad\\rightarrow\\quad y = \\frac{3}{4}-x.\n\\]\nSubstitute this last equation into the first and solve for \\(x\\):\n\\[\\begin{align}\n\\frac{1}{16} + x^2 &= \\left(\\frac{3}{4}-x \\right)^2\\\\\n\\frac{1}{16} + \\cancel{x^2} &= \\frac{9}{16} - 2\\cdot\\frac{3}{4}x + \\cancel{x^2} \\\\\n1 &= 9 - 24x \\\\\nx &= \\frac{1}{3}.\n\\end{align}\\]\nAnd this proves what we wanted to show. \\(\\blacksquare\\)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-c",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-c",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-c",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-c",
     "title": "Fold into thirds",
     "section": "method C",
     "text": "method C\n\nOur goal here is to show that the segment marked with \\(y\\) equals two thirds.\nCrease the right side of the square at its center.\nBring the top left corner to this middle point on the right.\nWe see two gray triangles, and they are similar. To see why, we first notice that both are right triangles. Then we notice that the angle \\(\\alpha\\) in the top triangle implies that the angle \\(\\beta\\) in the bottom triangle is its complementary: \\(\\alpha + \\beta = 90^\\circ\\). To prove this we use the fact that the angle in blue is a right angle. From there it’s clear that the left angle in the bottom triangle is also \\(\\alpha\\). Since the two gray triangles share two angles, they are similar.\n\n\n\nThe top triangle is completely determined, we know everything about it. One side is one half, and the other two sides are \\(x\\) and \\(1-x\\), since their sum is the side of the square. Let’s find \\(x\\) using Pythagoras’ formula: \\[\\begin{align}\nx^2 + \\left(\\frac{1}{2}\\right)^2 &= (1-x)^2 \\\\\n\\cancel{x^2} + \\frac{1}{4} &= 1 - 2x + \\cancel{x^2} \\\\\n2x &= 1 - \\frac{1}{4} \\\\\nx &= \\frac{3}{8}.\n\\end{align}\\]\nLet’s calculate the tangent of \\(\\alpha\\) in the top triangle: \\[\n\\tan\\alpha = \\frac{\\text{opposite}}{\\text{adjacent}} = \\frac{3/8}{1/2} = \\frac{3}{4}.\n\\]\nNow let’s calculate the tangent of \\(\\alpha\\) in the bottom triangle: \\[\n\\tan\\alpha = \\frac{1/2}{y},\n\\] and that, of course, equals \\(3/4\\), giving us \\[\n\\frac{1}{2y} = \\frac{3}{4} \\quad\\rightarrow\\quad y = \\frac{2}{3},\n\\] and that proves what we wanted to show. \\(\\blacksquare\\)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-d",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-d",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-d",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-d",
     "title": "Fold into thirds",
     "section": "method D",
     "text": "method D\n\nCrease the right side of the square at its center.\nBring the left bottom corner to this middle height on the right. Attention, this is different from method C, where we brought the top left corner to the middle point on the right.\nCrease a vertical line from the bottom corner of the blue triangle. This vertical line will intersect the long side of the blue triangle, and the distance from this intersection to the corner of the square is \\(x\\).\nOur goal is to show that \\(x\\) equals one third.\n\n\nThis is a complicated proof, maybe there’s a simpler one, but bear with me.\n\nThere are a few important right triangles that will help us. I painted them in different colors on the figure on the left, to help me explain what’s going on.\nLet’s start with the red triangle. It has sides of length \\(z\\), \\(1/2\\) and \\(1\\), and angles \\(\\alpha\\), \\(\\beta\\) and \\(90^\\circ\\). Using Pythagoras’ formula we can find \\(z\\): \\[\\begin{align}\nz^2 + \\left(\\frac{1}{2}\\right)^2 &= 1^2 \\\\\nz^2 + \\frac{1}{4} &= 1 \\\\\nz^2 &= \\frac{3}{4} \\\\\nz &= \\frac{\\sqrt{3}}{2}.\n\\end{align}\\]\nNow let’s look at the black triangle. It is easy to show that it is similar to the red triangle. It’s sides are \\(1/2\\), \\(z-y\\) and \\(y\\). We already know \\(z\\), so we can use Pythagoras’ formula again to find \\(y\\): \\[\\begin{align}\n\\left(\\frac{1}{2}\\right)^2 + (z-y)^2 &= y^2 \\\\\n\\frac{1}{4} + z^2 - 2zy + \\cancel{y^2} &= \\cancel{y^2} \\\\\n\\frac{1}{4} + \\frac{3}{4} &= \\cancel{2}\\cdot \\frac{\\sqrt{3}}{\\cancel{2}} y \\\\\ny &= \\frac{1}{\\sqrt{3}} = \\frac{\\sqrt{3}}{3}.\n\\end{align}\\]\nFinally, we look at the yellow triangle. It is similar to the red and black triangles, and its legs are \\(x\\) and \\(y\\). Let’s calculate the tangent of \\(\\alpha\\) in the red and yellow triangles, and equal them: \\[\\begin{align}\n\\text{red: }\\tan\\alpha &= \\frac{1/2}{z} = 1/\\sqrt{3}, \\\\\n\\text{yellow: }\\tan\\alpha &= \\frac{x}{y} = \\sqrt{3}x \\\\\n\\text{therefore: } \\sqrt{3}x &= \\frac{1}{\\sqrt{3}}\\quad\\rightarrow\\quad x = \\frac{1}{3}.\n\\end{align}\\] and that proves what we wanted to show. \\(\\blacksquare\\)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-e",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-e",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-e",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-e",
     "title": "Fold into thirds",
     "section": "method E",
     "text": "method E\n\nCrease the two main diagonals. They meet at the black dot.\nBring the right bottom corner to this black dot, and make another crease. This creates a line segment parallel to one of the diagonals, and it intersects the other diagonal at the point marked with a yellow circle.\nCrease a line connecting this yellow dot to the top right corner. This line will intersect the bottom side of the square at a distance \\(x\\) from the right corner.\nOur goal is to show that \\(x\\) equals one third.\n\n\n\nDraw a vertical line down from the yellow dot. I made it red and dotted.\nThe tiny right triangle whose legs are the red dotted line and the yellow line is similar to the big right triangle whose legs are \\(x\\) and the right side of the square. They are both right triangles, and they share the angle that is complementary to \\(\\alpha\\) (I didn’t give it a name because I didn’t have enough space.)\nTo continue with this proof, we need to find the length of the red dotted line and the yellow line. I won’t do it here, but in the same way that the black dot is at half of the height of the square, the yellow dot is at one quarter of the height of the square, so the red dotted line is one quarter. I marked another line segment as \\(1/4\\), and this is true because it is the second leg of the small right and isoceles triangle whose first leg is the red dotted line. Finally, the length of the yellow line is clearly \\(x-1/4\\).\nLet’s calculate the tangent of \\(\\alpha\\) of both triangles and equal them: \\[\\begin{align}\n\\text{big: }\\tan\\alpha &= \\frac{x}{1} = x, \\\\\n\\text{small: }\\tan\\alpha &= \\frac{x-1/4}{1/4}\\\\\n  \\text{therefore: } x &= \\frac{x-1/4}{1/4} \\quad\\rightarrow\\quad x = \\frac{1}{3},\n\\end{align}\\] and that proves what we wanted to show. \\(\\blacksquare\\)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-f",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-f",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-f",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-f",
     "title": "Fold into thirds",
     "section": "method F",
     "text": "method F\nThis is an iterative method. I’ll call \\(a\\) and \\(b\\) the crease distance from the left side of the square.\n\nGuess a crease close to distance \\(1/3\\), I’ll call it \\(a_1\\).\nMake a crease at \\(b_1\\), midway between \\(a_1\\) and the right side of the square.\nMake \\(a_2\\), midway between the left side and \\(b_1\\).\netc\n\nI need to prove that the iterative method generates a series \\(a_1, a_2, a_3,...\\) that converges to \\(1/3\\).\n\n\nGiven an initial guess \\(a_1\\), the position of \\(b_1\\) is completely determined. The distance between \\(a_1\\) and the right side of the square is \\(1-a_1\\) and half of that is \\((1-a_1)/2\\). Therefore we have that \\[\nb_1=a_1 + (1-a_1)/2.\n\\]\nNow that \\(b_1\\) was found, \\(a_2\\) is determined. The distance between \\(b_1\\) and the left side is \\(b_1\\) itself, and half of it is the location of \\(a_2\\): \\[\na_2 = \\frac{a_1}{2} + \\frac{1-a_1}{4} = \\frac{2a_1-a_1+1}{4} = \\frac{1}{4}+\\frac{a_1}{4}.\n\\]\nWe found an expression for \\(a_2\\) in terms of \\(a_1\\). Clearly, the relationship between \\(a_3\\) and \\(a_2\\) will be the same: \\[\\begin{align}\na_{3} &= \\frac{1}{4}+\\frac{a_2}{4} \\\\\n&= \\frac{1}{4}+\\frac{1}{4}\\left(\\frac{1}{4}+\\frac{a_1}{4}\\right) \\\\\n&= \\frac{1}{4}+\\frac{1}{4^2} + \\frac{1}{4^2}a_1.\n\\end{align}\\]\nSimilarly for \\(a_4\\): \\[\\begin{align}\n  a_{4} &= \\frac{1}{4}+\\frac{a_3}{4} \\\\\n  &= \\frac{1}{4}+\\frac{1}{4}\\left(\\frac{1}{4}+\\frac{1}{4^2} + \\frac{1}{4^2}a_1\\right) \\\\\n  &= \\frac{1}{4}+\\frac{1}{4^2} + \\frac{1}{4^3} + \\frac{1}{4^3}a_1.\n  \\end{align}\\]\nA clear pattern emerges. Taking this iterative process to the limit: \\[\\begin{align}\na_\\infty = \\lim_{n\\to\\infty}\\left[ \\sum_{i=1}^{n-1} 4^{-i} + 4^{-(n-1)}a_1 \\right]\n\\end{align}\\]\nThe second term vanishes in the limit to infinity. The result doesn’t care about our initial choice for the position of the first crease.\nThe position of the crease \\(a\\) goes to \\[\na = \\sum_{i=1}^{\\infty} 4^{-i}.\n\\] To evaluate this, let’s multiply both sides by 4: \\[\\begin{align}\n4a &= \\sum_{i=1}^{\\infty} 4^{1-i} \\\\\n4a &= 1 + \\sum_{i=1}^{\\infty} 4^{-i} \\\\\n4a &= 1 + a \\\\\n  3a &= 1 \\\\\n  a &= \\frac{1}{3}.\n\\end{align}\\] And that proves what we wanted to show. \\(\\blacksquare\\)\n\nA nice visual proof of this infinite sum is the following:\n\n\n\nSource: https://whymystudentsdidnt.wordpress.com/tag/visual-proof/"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-h",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-h",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-h",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-h",
     "title": "Fold into thirds",
     "section": "method H",
     "text": "method H\nYes, I now realize that the diagram shows H before G… But this is not my diagram, and I’m not touching it…\n\nThis is justified by Thales’s intercept theorem. In simple words, it states that if we have a set of parallel lines, and two transversals that intersect them, then the segments determined by the first transversal are in the same ratio as the segments determined by the second transversal.\n\nThe parallel lines are the creases of the blue paper, which was folded into fourths.\nThe transversals are the right side of the blue square and the bottom-right side of the gray square.\nThe first transversal is divided into three equal segments, so the second transversal is also divided into three equal segments. \\(\\blacksquare\\)\n\nThis method has the advantage that now you can divide the paper into any number of equal segments, not just three. For example, if you need to divide a square into fifths, fold another square into eighths and use the same method (It’s easy to fold into powers of two)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#method-g",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#method-g",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#method-g",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#method-g",
     "title": "Fold into thirds",
     "section": "method G",
     "text": "method G\nThis is the “let’s eyeball it” method. If the paper is flexible enough, it might prove to be the easiest method :)"
   },
   {
-    "objectID": "posts/2026-05-08-fold-into-thirds/index.html#practical-tip",
-    "href": "posts/2026-05-08-fold-into-thirds/index.html#practical-tip",
+    "objectID": "posts/2026-05-09-fold-into-thirds/index.html#practical-tip",
+    "href": "posts/2026-05-09-fold-into-thirds/index.html#practical-tip",
     "title": "Fold into thirds",
     "section": "practical tip",
     "text": "practical tip\nIf you have a project that demands many pieces of paper folded into thirds, do yourself a favor and make a template. Fold one piece of paper into thirds using any of the methods above, and then use it as a template to fold the rest of the pieces."
-  },
-  {
-    "objectID": "posts/2021-11-08-tomoko-fuse/index.html",
-    "href": "posts/2021-11-08-tomoko-fuse/index.html",
-    "title": "Tomoko Fuse Unit Origami",
-    "section": "",
-    "text": "This structure has the general shape of a dodecahedron, with 12 beautiful pentagonal stars embeded in it. I found a while back a scan of the book Tomoko Fuse Unit Origami Fantasy. The book is all written in japanese, but I could make sense of the diagrams.\nTomoko Fuse is a master of modular origami, just google her name and you’ll find tons of fun projects.\nI used craft paper to give the structure a muted tones and a rustic feel. I think it turned out pretty good 😊."
-  },
-  {
-    "objectID": "posts/2025-02-27-a4paper/index.html",
-    "href": "posts/2025-02-27-a4paper/index.html",
-    "title": "A4 paper",
-    "section": "",
-    "text": "The various sizes of the A series have an interesting property. If, for example, you divide the A4 sheet into two equal parts, each of the resulting rectangles will be an A5 sheet, whose proportions are exactly the same as the original A4."
-  },
-  {
-    "objectID": "posts/2025-02-27-a4paper/index.html#what-is-this-proportion",
-    "href": "posts/2025-02-27-a4paper/index.html#what-is-this-proportion",
-    "title": "A4 paper",
-    "section": "what is this proportion?",
-    "text": "what is this proportion?\nLet’s call \\(a\\) and \\(b\\) the long and short sides of the A4 sheet.\nQuestion: what is \\(a/b\\)?\nThe sides of the A5 sheet are then \\(b\\) (long side) and \\(a/2\\) (short side). Because the proportions of the A5 are exactly the same as those of the A4, we have\n\\[\n\\frac{a}{b} = \\frac{b}{\\frac{a}{2}},\n\\]\nwhich after cross-multiplying gives\n\\[\n\\frac{a^2}{b^2} = 2.\n\\]\nTaking the square root gives\n\\[\n\\frac{a}{b} = \\sqrt{2}.\n\\]"
-  },
-  {
-    "objectID": "posts/2025-02-27-a4paper/index.html#why-a4-whats-a0",
-    "href": "posts/2025-02-27-a4paper/index.html#why-a4-whats-a0",
-    "title": "A4 paper",
-    "section": "Why A4? What’s A0?",
-    "text": "Why A4? What’s A0?\nNow that we found the proportion of the A series, we can ask a follow up:\nQuestion: Why does the A4 have this specific size? What’s special about it?\nThe A series starts with A0, which has the nice property of having an area of 1 m\\(^2\\).\n\n\n\nSize\nArea (m²)\n\n\n\n\nA0\n\\(1\\)\n\n\nA1\n\\(1/2\\)\n\n\nA2\n\\(1/4\\)\n\n\nA3\n\\(1/8\\)\n\n\nA4\n\\(1/16\\)\n\n\n\nWe found that the area of an A4 is \\(1/16\\) m\\(^2\\), so now we can write a system of two equations:\n\\[\n\\begin{align}\n\\frac{a}{b} &= \\sqrt{2} \\\\\na \\cdot b &= \\frac{1}{16}\n\\end{align}\n\\]\nSolving for \\(a\\) in the first equation gives \\(a=\\sqrt{2}b\\), and substituting this into the second equation gives\n\\[\n\\begin{align}\nb^2\\sqrt{2} &= \\frac{1}{16} \\\\\n\\Rightarrow b^2 &= \\frac{1}{\\sqrt{2}\\cdot 2^4} = \\frac{1}{2^{\\frac{1}{2}}\\cdot 2^4} = \\frac{1}{2^{\\frac{1}{2}+4}} \\\\\n\\Rightarrow b &= 2^{-\\frac{1}{4}-2}\n\\end{align}\n\\]\nand clearly\n\\[\n\\begin{align}\na &= \\sqrt{2}b \\\\\n\\Rightarrow a &= 2^{\\frac{1}{2}}2^{-\\frac{1}{4}-2} = 2^{\\frac{1}{2}-\\frac{1}{4}-2} \\\\\n\\Rightarrow a &= 2^{\\frac{1}{4}-2} \\\\\n\\end{align}\n\\]\nTo sum up: \\[\na = 2^{\\frac{1}{4}-2} \\qquad b = 2^{-\\frac{1}{4}-2}\n\\]\n\na = 2**(1/4-2)   # in meters\nb = 2**(-1/4-2)  # in meters\nprint(f\"a={1000*a:.0f} mm, b={1000*b:.0f} mm\")\nprint(\"Check out the exact values in the figure at the top of this post\")\n\na=297 mm, b=210 mm\nCheck out the exact values in the figure at the top of this post\n\n\nAnd this, my friends, concludes today’s exercise :)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "A clean desk is the sign of a sick mind",
     "section": "",
-    "text": "A clean desk is the sign of a sick mind\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrometheus is to Epimetheus\n\n\nas Deduction is to Induction\n\n\n\n\n\nFeb 6, 2026\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nLegendre transformations visualized\n\n\n\nmath\n\nphysics\n\n\n\nmuch more than algebraic manipulations\n\n\n\n\n\nJan 31, 2026\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nFold into thirds\n\n\n\nmath\n\norigami\n\n\n\neasier than you think\n\n\n\n\n\nJan 31, 2026\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nGreat and Small Stellated Dodecahedron\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\none piece, two shapes\n\n\n\n\n\nDec 21, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSnapology\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nmake anything from strips of paper\n\n\n\n\n\nSep 17, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nCelestial\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nthe rhombic hexecontahedron\n\n\n\n\n\nSep 17, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTriangle Edge Module\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nMake a surprisingly sturdy dodecahedron\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPHiZZ\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nFun ziz-zag modular origami unit\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nA4 paper\n\n\n\nprojects\n\nmath\n\n\n\nWhat’s the logic behind this paper?\n\n\n\n\n\nFeb 27, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nDoubling Time\n\n\n\nscience\n\n\n\nHere is an incredibly useful equation to calculate doubling times\n\n\n\n\n\nNov 16, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nParabolic Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nA pringles-shaped construction\n\n\n\n\n\nNov 13, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSkewer Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nThe crown you always wanted\n\n\n\n\n\nNov 12, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nGeorge Hart’s Card Constructions\n\n\n\nprojects\n\n\n\nBeware, it boggles the mind!\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTomoko Fuse Unit Origami\n\n\n\nprojects\n\n\n\nEndless fun\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe Sonobe Module\n\n\n\nprojects\n\n\n\nThe best way to start doing modular origami\n\n\n\n\n\nNov 3, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nHexastix\n\n\n\nprojects\n\n\n\nCrazy construction made of 72 pencils\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPythagorean theorem\n\n\n\nmath\n\n\n\nOne of the oldest theorems, always fresh :)\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe can problem\n\n\n\nquestion\n\n\n\n\n\n\n\n\n\nOct 27, 2021\n\n\nYair Mau\n\n\n\n\n\nNo matching items"
+    "text": "A clean desk is the sign of a sick mind\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFold into thirds\n\n\n\nmath\n\norigami\n\n\n\neasier than you think\n\n\n\n\n\nMay 9, 2026\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPrometheus is to Epimetheus\n\n\nas Deduction is to Induction\n\n\n\n\n\nFeb 6, 2026\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nLegendre transformations visualized\n\n\n\nmath\n\nphysics\n\n\n\nmuch more than algebraic manipulations\n\n\n\n\n\nJan 31, 2026\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nGreat and Small Stellated Dodecahedron\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\none piece, two shapes\n\n\n\n\n\nDec 21, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSnapology\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nmake anything from strips of paper\n\n\n\n\n\nSep 17, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nCelestial\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nthe rhombic hexecontahedron\n\n\n\n\n\nSep 17, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTriangle Edge Module\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nMake a surprisingly sturdy dodecahedron\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPHiZZ\n\n\n\norigami\n\nprojects\n\nmath\n\n\n\nFun ziz-zag modular origami unit\n\n\n\n\n\nJun 14, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nA4 paper\n\n\n\nprojects\n\nmath\n\n\n\nWhat’s the logic behind this paper?\n\n\n\n\n\nFeb 27, 2025\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nDoubling Time\n\n\n\nscience\n\n\n\nHere is an incredibly useful equation to calculate doubling times\n\n\n\n\n\nNov 16, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nParabolic Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nA pringles-shaped construction\n\n\n\n\n\nNov 13, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nSkewer Hyperboloid\n\n\n\nprojects\n\nmath\n\n\n\nThe crown you always wanted\n\n\n\n\n\nNov 12, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nGeorge Hart’s Card Constructions\n\n\n\nprojects\n\n\n\nBeware, it boggles the mind!\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nTomoko Fuse Unit Origami\n\n\n\nprojects\n\n\n\nEndless fun\n\n\n\n\n\nNov 8, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe Sonobe Module\n\n\n\nprojects\n\n\n\nThe best way to start doing modular origami\n\n\n\n\n\nNov 3, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nHexastix\n\n\n\nprojects\n\n\n\nCrazy construction made of 72 pencils\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nPythagorean theorem\n\n\n\nmath\n\n\n\nOne of the oldest theorems, always fresh :)\n\n\n\n\n\nOct 28, 2021\n\n\nYair Mau\n\n\n\n\n\n\n\n\n\n\n\n\nThe can problem\n\n\n\nquestion\n\n\n\n\n\n\n\n\n\nOct 27, 2021\n\n\nYair Mau\n\n\n\n\n\nNo matching items"
   }
 ]
