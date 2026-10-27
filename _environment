@@ -1,2 +1,2 @@
-QUARTO_PYTHON="/Users/yairmau/anaconda3/bin/python"
-PY_PYTHON="/Users/yairmau/anaconda3/bin/python"
+QUARTO_PYTHON="/Users/yairmau/miniforge3/envs/olympus/bin/python"
+PY_PYTHON="/Users/yairmau/miniforge3/envs/olympus/bin/python"

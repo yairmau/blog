@@ -4,6 +4,7 @@ listing:
   contents: posts
   sort: "date desc"
   type: default
+  fields: [date, title, description, categories, image]
   categories: true
   sort-ui: false
   filter-ui: false
@@ -11,6 +12,10 @@ page-layout: full
 title-block-banner: false
 ---
 
-:::{.alert .alert-primary}
-# A clean desk is the sign of a sick mind
+:::{.blog-intro}
+# Yair Mau
+
+Notes on mathematics, physics, and things I make.
+
+[> A clean desk is the sign of a sick mind.]{.blog-tagline}
 :::

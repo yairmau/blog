@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Blog: New Post",
+      "type": "process",
+      "command": "python3",
+      "args": ["${workspaceFolder}/scripts/new_post.py", "${input:postTitle}", "--categories", "${input:postCategories}", "--open"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Blog: Preview",
+      "type": "process",
+      "command": "quarto",
+      "args": ["preview"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Blog: Render for publishing",
+      "type": "process",
+      "command": "quarto",
+      "args": ["render"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    { "id": "postTitle", "type": "promptString", "description": "Post title" },
+    { "id": "postCategories", "type": "promptString", "description": "Categories, separated by commas (optional)", "default": "" }
+  ]
+}

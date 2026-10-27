@@ -1042,6 +1042,8 @@ $theme-name: null !default;
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+$font-size-base: 1.125rem;
+$line-height-base: 1.6;
 //   FreeSerif, serif !default;
 // $max-width: 500px;
 // $max-width: 400px;
@@ -3344,7 +3346,7 @@ $pre-color:                         $body-emphasis-color !default;
 $pre-line-height:                   $line-height-base !default;
 $font-family-base: Ubuntu;
 $font-family-code: "Ubuntu Mono";
-$max-width: 700px;
+$grid-body-width: 700px;
 
 
 
@@ -13004,24 +13006,74 @@ h6 {
   font-weight: normal;
   line-height: $line-height-base;
 }
-h1 {
-  text-align: center;
+// Article rhythm; small UI text and captions retain the theme's own sizing.
+main.content > p,
+main.content section > p {
+  margin-bottom: 1.25em;
 }
 
-// Font family, size, etc
-p {
-  font-size: 20px;
-  font-family:
-    Ubuntu,
-    sans-serif
-    !important; }
+main.content h2 {
+  margin-top: 2.25rem;
+}
 
-ul, ol {
-  font-size: 20px;
-  font-family:
-    Ubuntu,
-    sans-serif
-    !important; }
+main.content h3 {
+  margin-top: 1.75rem;
+}
+
+main.content figure {
+  margin-block: 2rem;
+}
+
+main.content .math.display {
+  display: block;
+  overflow-x: auto;
+  margin-block: 1.5rem;
+}
+
+// Keep article links easy to recognize without underlining listing rows.
+main.content p a:not(.no-external):not(.quarto-title-anchor),
+main.content li a:not(.no-external):not(.quarto-title-anchor) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.blog-intro {
+  margin-block: 1rem 2.5rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-tagline {
+    color: $text-muted;
+    font-size: 0.85rem;
+  }
+}
+
+// Let the title and excerpt lead, with the date and categories secondary.
+.quarto-listing-default {
+  .quarto-post {
+    padding-block: 1.5rem;
+  }
+
+  .listing-date,
+  .listing-category {
+    color: $text-muted;
+  }
+
+  .listing-description {
+    line-height: 1.5;
+  }
+
+  .thumbnail img {
+    object-fit: contain;
+  }
+}
 
 // Code font
 pre code{

@@ -25,7 +25,8 @@ format:
     highlight-style: breezedark
     mainfont: Ubuntu
     monofont: Ubuntu Mono
-    max-width: "700"
+    grid:
+      body-width: 700px
     # include-in-header:
     #   - includes.html
     
