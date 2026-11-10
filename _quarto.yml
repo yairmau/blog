@@ -12,6 +12,9 @@ website:
     pinned: false
     collapse: true
     search: true
+    right:
+      - text: "← Back to yairmau.com"
+        href: https://yairmau.com/
 format:
   html:
     theme:
