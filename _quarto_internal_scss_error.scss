@@ -1,4 +1,4 @@
-// quarto-scss-analysis-annotation { "quarto-version": "1.7.31" }
+// quarto-scss-analysis-annotation { "quarto-version": "1.6.41" }
 
 // quarto-scss-analysis-annotation { "origin": "'use' section from format" }
 
@@ -1041,6 +1041,15 @@ $theme-name: null !default;
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+// Midnight palette, shared with yairmau.com
+$primary: #0d1f2d;
+$link-color: #0071eb;
+$body-color: #1e2a33;
+$navbar-bg: #0d1f2d;
+$navbar-fg: #ffffff;
+$code-block-bg: #f0f5f9;
 
 $font-size-base: 1.125rem;
 $line-height-base: 1.6;
@@ -5321,6 +5330,7 @@ $grid-default-toc-mid-body: minmax(
 @import "mixins/banner";
 @include bsBanner("");
 
+
 // scss-docs-start import-stack
 // Configuration
 @import "variables-dark";
@@ -5333,7 +5343,6 @@ $grid-default-toc-mid-body: minmax(
 @import "type";
 @import "images";
 @import "containers";
-@import "light-dark";
 @import "grid";
 @import "tables";
 @import "forms";
@@ -10402,6 +10411,10 @@ $mermaid-node-fg-color: $primary !default;
   z-index: 3;
 }
 
+.code-copy-button:focus {
+  outline: none;
+}
+
 .code-copy-button-tooltip {
   font-size: 0.75em;
 }
@@ -12997,6 +13010,18 @@ a {
   text-decoration: none;
 }
 
+// Thin underlines on links inside running text, so they don't rely on color alone
+#quarto-document-content :is(p, li) a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba($link-color, 0.4);
+  text-underline-offset: 2px;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
 // Headers
 h1, h2, h3, h4, h5{
   font-weight: bold;
@@ -13091,7 +13116,6 @@ code {
 // Navigation bar
 .navbar{
   // max-height: 68px;
-  background-color: #444;
   font-weight: bold;
   font-size: 110%;
 }
@@ -13100,7 +13124,14 @@ code {
 .navbar > .container-xxl, .navbar > .container-xl, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container, .navbar > .container-fluid {
   max-width: 800px;
   margin: 0 auto;
-} 
+}
+
+// Navbar logo: the φ mark is tall and narrow, so it gets more height than Quarto's default
+.navbar .navbar-logo {
+  height: 32px;
+  max-height: 32px;
+  min-height: 0;
+}
 
 // .navbar-collapse {
 //   background:#444; /*replace with desired color*/
@@ -13116,8 +13147,7 @@ code {
 }
 
 .collapse {
-  background-color: #444;
-  background: #444;
+  background-color: $navbar-bg;
 }
 
 

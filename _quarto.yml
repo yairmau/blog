@@ -1,14 +1,18 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - archive/logo/favicon.ico
+    - archive/logo/apple-touch-icon.png
 
 website:
   title: "Yair Mau"
   search: true
-  favicon: archive/site_images/favicon.ico
+  favicon: archive/logo/favicon.svg
   google-analytics: "G-X3XFX2XS7M"
   navbar:
-    logo: archive/site_images/site-logo-light.png
+    logo: archive/logo/phi-mark-white.svg
+    logo-alt: "Yair Mau"
     pinned: false
     collapse: true
     search: true
@@ -30,8 +34,8 @@ format:
     monofont: Ubuntu Mono
     grid:
       body-width: 700px
-    # include-in-header:
-    #   - includes.html
+    include-in-header:
+      - includes.html
     
 
 
